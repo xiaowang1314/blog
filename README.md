@@ -9,13 +9,12 @@
 2. git add . 添加所有文件
 3. git commit -m "提交添加修改的文件"
 4. git push -u origin master 第一次提交代码到github
-4. git push origin master 提交代码到github
-5. git rm file_name 删除文件
-6. 关联远程库，使用命令git remote add origin https://github.com/xiaowang1314/blog
-7. git clone https://github.com/xiaowang1314/blog 克隆
-8. git checkout -- test.txt 恢复原版本文件
+4. git push origin master 提交代码到githu
+5. 关联远程库，使用命令git remote add origin https://github.com/xiaowang1314/blog
+6. git clone https://github.com/xiaowang1314/blog 克隆
+7. git checkout -- test.txt 恢复原版本文件
 
-
+#删除步骤
 硬盘删除文件后，执行$ git status
 
 会提示你仍然需要$ git rm <文件>
