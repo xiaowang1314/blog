@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89dfa45e-d876-4f6e-8cdf-41c098b3db92" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/yilia" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/yilia" afterPath="$PROJECT_DIR$/themes/yilia" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -259,7 +258,7 @@
       <workItem from="1469076509826" duration="3462000" />
       <workItem from="1469514976446" duration="4461000" />
       <workItem from="1469521134884" duration="2513000" />
-      <workItem from="1469523677583" duration="412000" />
+      <workItem from="1469523677583" duration="568000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1469523963873</created>
@@ -272,7 +271,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10891000" />
+    <option name="totallyTimeSpent" value="11047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1176" extended-state="0" />
