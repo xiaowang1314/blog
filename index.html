@@ -16,7 +16,7 @@
     <link rel="alternative" href="/atom.xml" title="Potato" type="application/atom+xml">
   
   
-    <link rel="icon" href="/blog/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -29,7 +29,7 @@
 	<header id="header" class="inner">
 		<a href="/blog" class="profilepic">
 			
-			<img lazy-src="/blog/img/head.jpg" class="js-avatar">
+			<img lazy-src="/img/head.jpg" class="js-avatar">
 			
 		</a>
 
@@ -74,7 +74,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -159,7 +159,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="/blog/img/head.jpg" class="js-avatar">
+				<img lazy-src="/img/head.jpg" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -194,6 +194,78 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-github-bind-domain" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/27/github-bind-domain/" class="article-date">
+  	<time datetime="2016-07-27T07:33:43.176Z" itemprop="datePublished">2016-07-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/27/github-bind-domain/">Github+Hexo绑定自己的域名</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在github中，我们可以通过github page创建个人主页并绑定自己的域名。</p>
+<p>据说有300m空间和无限流量，默认支持html静态页面，如果要支持动态语言需要额外的一些操作。</p>
+<p>简单说一下怎么绑定自己的域名，不使用github的二级域名。</p>
+<h2 id="方法-步骤"><a href="#方法-步骤" class="headerlink" title="方法/步骤"></a>方法/步骤</h2><ul>
+<li><p>github上创建项目的创库（怎么建仓库自己google吧！）</p>
+</li>
+<li><p>点击”Settings”按钮进入新页面，再点击 “Launch automatic page generator” 按钮，<br>进入新页面后再点击”Continue to layout”按钮，进入新页面，<br>选择一个模板点击“publish”按钮后会在项目中创建新分支”gh-pages”</p>
+</li>
+<li><p>在本地仓库的根目录添加CNAME，里面的内容为域名不要http以及www等前缀，只需写入域名本身，例如</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wzh6.com</div></pre></td></tr></table></figure>
+<p> <strong>* 如果是直接在GitHub网页上添加文件的话，会遇到一个问题就是在通过<code>hexo g -d</code>之后hexo会把根目录下的CNAME文件删除。</strong></p>
+<p> 所以要把CNAME文件添加到/source目录下，这样hexo g -d之后hexo会自动把CNAME复制到/puclic目录下然后将/public路径下的内容进行复制并push到远程master分支的根目录下。</p>
+<ul>
+<li><p>运行CMD，输入ping命令ping username.github.io   (其中username替换为你的github用户名)得到一个IP地址，记录下该IP地址。</p>
+</li>
+<li><p>登录或注册<a href="https://wanwang.aliyun.com/?utm_medium=text&amp;utm_source=baidu&amp;utm_campaign=ymsj&amp;utm_content=se_3734" target="_blank" rel="external">万维网</a>，添加域名，点击域名下“添加记录”按钮，分别添加@和www的两个A记录，其中IP地址填写上一步中得到的IP地址。<br><img src="http://i2.piimg.com/4851/10255c02c3794268.png" alt=""></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-js-with" class="article article-type-post" itemscope itemprop="blogPost">
   
