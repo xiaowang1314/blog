@@ -13,6 +13,7 @@
 5. 关联远程库，使用命令git remote add origin https://github.com/xiaowang1314/blog
 6. git clone https://github.com/xiaowang1314/blog 克隆
 7. git checkout -- test.txt 恢复原版本文件
+8. git clone -b <branch name> [remote repository address]
 
 #删除步骤
 硬盘删除文件后，执行$ git status
