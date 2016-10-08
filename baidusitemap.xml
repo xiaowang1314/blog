@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://wzh6.cn/2016/07/21/hexo/</loc>
+    <lastmod>2016-07-29T01:13:45.097Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo命令教程</title>
+        <pubTime>2016-07-21T04:18:24.762Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2016/07/21/js-with/</loc>
+    <lastmod>2016-07-29T01:13:38.873Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2016-07-21T05:17:52.342Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2016/07/27/github-bind-domain/</loc>
+    <lastmod>2016-07-29T01:13:22.270Z</lastmod>
+    <data>
+        <display>
+        <title>Github+Hexo绑定自己的域名</title>
+        <pubTime>2016-07-27T07:33:43.176Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>

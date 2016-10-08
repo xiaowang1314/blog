@@ -1,0 +1,414 @@
+body {
+  background: #000000 url("../images/bg.jpg") center top no-repeat;
+}
+.main {
+  position: relative;
+  top: 0;
+  width: 1000px;
+  margin: auto;
+  z-index: 2;
+  overflow: hidden;
+  padding-bottom: 365px;
+}
+.main .activity-time {
+  background: url('../images/time.png') no-repeat;
+  width: 230px;
+  height: 44px;
+  line-height: 44px;
+  margin: 608px auto 27px;
+  font-size: 18px;
+  color: #f0632a;
+  text-align: center;
+}
+.main .nav {
+  font-size: 0;
+}
+.main .nav > li {
+  float: left;
+  position: relative;
+  width: 222px;
+  height: 66px;
+  background: url("../images/bg-button2.png") no-repeat;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 13px;
+}
+.main .nav > li:first-child {
+  width: 292px;
+  background-image: url("../images/bg-button.png");
+  margin-left: 0;
+}
+.main .nav > li a {
+  display: block;
+  height: 100%;
+  color: #FFF;
+  line-height: 66px;
+  text-align: center;
+}
+.main .nav > li a > img {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 5px;
+}
+.main .nav > li a > .person-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.main .nav > li a > .text {
+  position: absolute;
+  right: 65px;
+  text-align: center;
+}
+.main .nav > li a > .text:after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  margin-top: -8px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #FFF;
+  border-bottom: 10px solid transparent;
+}
+.main .section {
+  margin-top: 104px;
+}
+.main .section > h2 {
+  text-align: center;
+  color: #FFF;
+  font-size: 38px;
+}
+.main .section > h2 > img {
+  display: inline-block;
+}
+.main .introduce .lside,
+.main .introduce .rside {
+  float: left;
+  margin-top: 55px;
+}
+.main .introduce .lside {
+  margin-right: 25px;
+}
+.main .introduce .rside {
+  width: 483px;
+}
+.main .introduce .rside .title-area > img,
+.main .introduce .rside .title-area .title {
+  float: left;
+}
+.main .introduce .rside .title-area .title {
+  margin-left: 10px;
+}
+.main .introduce .rside .title-area .title > h3 {
+  color: #f9d791;
+  font-size: 34px;
+  font-weight: bold;
+}
+.main .introduce .rside .title-area .title > h6 {
+  color: #636363;
+  font-size: 14px;
+}
+.main .introduce .disc-1,
+.main .introduce .disc-2 {
+  font-size: 14px;
+  color: #8d8d8d;
+  line-height: 22px;
+}
+.main .introduce .disc-1 {
+  background: #181819;
+  padding: 20px 15px;
+  margin: 15px 0 40px;
+}
+.main .online .disc,
+.main .gunplay .disc {
+  text-align: center;
+  color: #ff9c28;
+  font-size: 20px;
+  margin-top: 35px;
+}
+.main .online .disc > img,
+.main .gunplay .disc > img {
+  display: inline-block;
+  margin-right: 10px;
+}
+.main .online .award-area {
+  margin-top: 85px;
+}
+.main .online .award-area > li {
+  display: inline-block;
+  position: relative;
+  border: 2px solid #000;
+  transition: 0.3s;
+}
+.main .online .award-area > li.rounded {
+  border-radius: 6px;
+}
+.main .online .award-area > li.li {
+  margin-left: 25px;
+}
+.main .online .award-area > li > .name,
+.main .online .award-area > li > a {
+  position: absolute;
+  color: #fdf9f4;
+}
+.main .online .award-area > li > .name {
+  bottom: 125px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+.main .online .award-area > li > a {
+  left: 50%;
+  margin-left: -81px;
+  bottom: 52px;
+  width: 167px;
+  line-height: 54px;
+  background: url('../images/button.png') no-repeat;
+  font-size: 18px;
+  text-align: center;
+}
+.main .online .award-area > li:hover {
+  border-color: #a77e33;
+}
+.main .online .award-area > li:hover > .name {
+  color: #a77e33;
+}
+.main .online .award-area > li:hover > a {
+  background-position: 0 -55px;
+}
+.main .lottery-area .xycj {
+  position: relative;
+  margin-top: 65px;
+}
+.main .lottery-area .rside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 444px;
+}
+.main .lottery-area .rside .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f9d791;
+}
+.main .lottery-area .rside .title > img {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 15px;
+}
+.main .lottery-area .rside .award-area {
+  margin: 25px 0 66px;
+}
+.main .lottery-area .rside .award-area > li {
+  position: relative;
+  float: left;
+  margin-left: 27px;
+  width: 130px;
+  height: 110px;
+  background-color: #4f4e4f;
+}
+.main .lottery-area .rside .award-area > li:first-child {
+  margin-left: 0;
+}
+.main .lottery-area .rside .award-area > li > p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  line-height: 30px;
+  background-color: #211b1f;
+  font-size: 14px;
+  color: #fafafa;
+}
+.main .lottery-area .rside .disc {
+  padding-right: 20px;
+  margin-top: 20px;
+  line-height: 27px;
+  font-size: 14px;
+  color: #8d8d8d;
+}
+.main .finals {
+  background-color: #181819;
+  padding-bottom: 35px;
+}
+.main .finals > h2 {
+  background-color: #000;
+  padding-bottom: 55px;
+}
+.main .finals > ul > li {
+  position: relative;
+  width: 12.5%;
+  line-height: 51px;
+  float: left;
+  font-size: 18px;
+  color: #b0b0b0;
+  background-color: #bc4f00;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main .finals > ul > li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 24px;
+  background-color: #314571;
+  top: 50%;
+  margin-top: -12px;
+}
+.main .finals > ul > li:first-child:before {
+  width: 0;
+}
+.main .finals > ul > li:hover {
+  background-color: #ffb55e;
+  color: #FFF;
+}
+.main .finals > ul > li:hover:before {
+  width: 0;
+}
+.main .finals > ul > li:hover + li:before {
+  width: 0;
+}
+.main .finals .edg {
+  margin: 35px 0 20px 138px;
+  color: #ffb55e;
+  font-size: 40px;
+  font-weight: bold;
+}
+.main .finals .lside,
+.main .finals .rside {
+  float: left;
+}
+.main .finals .lside {
+  position: relative;
+  width: 258px;
+  height: 490px;
+  margin-left: 54px;
+}
+.main .finals .lside .score {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #dedede;
+  text-align: center;
+}
+.main .finals .rside {
+  margin-left: 35px;
+  width: 650px;
+  padding-right: 55px;
+}
+.main .finals .rside .title {
+  width: 96px;
+  line-height: 25px;
+  font-size: 14px;
+  color: #ffb55e;
+  background: url("../images/title.png") no-repeat;
+  padding-left: 6px;
+}
+.main .finals .rside .ctn {
+  font-size: 14px;
+  color: #8d8d8d;
+  margin: 10px 0 30px;
+}
+.main .finals .rside .member {
+  margin-top: 18px;
+}
+.main .finals .rside .member > li {
+  float: left;
+  margin-right: 30px;
+}
+.main .finals .rside .member > li .head-img {
+  width: 78px;
+  height: 78px;
+  background-color: #59595e;
+}
+.main .finals .rside .member > li .name {
+  font-size: 14px;
+  color: #ffb55e;
+  text-align: center;
+  margin-top: 7px;
+}
+.main .finals .rside .btn-area {
+  margin: 82px 0 0 140px;
+  width: 217px;
+}
+.main .finals .rside .btn-area .btn {
+  display: block;
+  line-height: 57px;
+  background: url("../images/good-btn.jpg") no-repeat;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  text-align: center;
+}
+.main .finals .rside .btn-area .btn > img {
+  display: inline-block;
+  vertical-align: -5px;
+  margin-right: 15px;
+}
+.main .finals .rside .btn-area .num {
+  position: static;
+  font-size: 14px;
+  color: #dd6101;
+  margin: 15px auto;
+}
+.main .gunplay .area8 {
+  margin-top: 35px;
+}
+.main .gunplay .form-area {
+  width: 830px;
+  margin: auto;
+}
+.main .gunplay .form-area > textarea {
+  display: block;
+  margin: 45px auto 30px;
+  overflow-y: auto;
+  font-size: 14px;
+  resize: none;
+  width: 830px;
+  height: 128px;
+  line-height: 24px;
+  border: 0;
+  padding: 10px 20px;
+  color: #5a5a5a;
+  background-color: #fff;
+}
+.main .gunplay .form-area label {
+  font-size: 14px;
+  color: #ec8901;
+  display: inline-block;
+  vertical-align: -2px;
+}
+.main .gunplay .form-area .lisde > input,
+.main .gunplay .form-area .rside > input {
+  background-color: #b3b5ba;
+  width: 165px;
+  line-height: 39px;
+  height: 39px;
+  font-size: 14px;
+  border: 0;
+  text-indent: 10px;
+}
+.main .gunplay .form-area .lisde {
+  float: left;
+}
+.main .gunplay .form-area .rside {
+  float: right;
+}
+.main .gunplay .form-area .send {
+  display: block;
+  text-align: center;
+  line-height: 57px;
+  width: 126px;
+  margin: 55px auto 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  background: url("../images/send-btn.jpg");
+}
