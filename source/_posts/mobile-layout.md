@@ -1,7 +1,8 @@
 title: webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖
 ---
 下面我要介绍webapp上的布局方法：
-可以解决想隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖或者被撑的老远等问题
+可以解决想隐藏滚动条、ios滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖或者被撑的老远等问题
+(安卓机有个问题：input获取焦点时会被软键盘覆盖，暂时未想到好方案)
 下面这种布局目前来说我感觉是比较好的基础布局方式
 
 
