@@ -2,7 +2,7 @@
 title: Promise和ajax的封装
 ---
 
-##代码如下:
+## 代码如下:
 ```
 /**
  * ajax函数，返回一个promise对象
