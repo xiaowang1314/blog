@@ -84,7 +84,7 @@ menu:
 
 # SubNav
 subnav:
-  github: "#"
+  github: ""
   weibo: "#"
   rss: "#"
   zhihu: "#"
