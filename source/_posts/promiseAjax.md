@@ -3,7 +3,7 @@ title: Promise和ajax的封装
 ---
 
 ## 代码如下:
-```
+``` bash
 /**
  * ajax函数，返回一个promise对象
  * @param {Object} optionsOverride 参数设置，支持的参数如下
@@ -92,8 +92,6 @@ function ajax(optionsOverride){
         }
     });
 }
-
-
 
 
 ```
