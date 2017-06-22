@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/uploadImages/</loc>
+    <lastmod>2017-06-22T07:18:08.261Z</lastmod>
+    <data>
+        <display>
+        <title>多图片上传</title>
+        <pubTime>2017-06-22T07:09:16.129Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/node-server/</loc>
+    <lastmod>2017-06-22T07:08:40.403Z</lastmod>
+    <data>
+        <display>
+        <title>Node服务器搭建</title>
+        <pubTime>2017-06-22T06:28:33.708Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-router4-lazy-js/</loc>
+    <lastmod>2017-06-22T06:23:30.461Z</lastmod>
+    <data>
+        <display>
+        <title>webpack2 react-router4 懒加载</title>
+        <pubTime>2017-06-22T06:23:30.461Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-router2-lazy-js/</loc>
+    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
+    <data>
+        <display>
+        <title>webpack2 react-router2 懒加载</title>
+        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-build/</loc>
+    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
+    <data>
+        <display>
+        <title>webpack2 配置</title>
+        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack1-build/</loc>
+    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
+    <data>
+        <display>
+        <title>webpack1 配置</title>
+        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
+    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <data>
+        <display>
+        <title>Promise和ajax的封装</title>
+        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/mobile-layout/</loc>
+    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <data>
+        <display>
+        <title>webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖</title>
+        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/loadImg/</loc>
+    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <data>
+        <display>
+        <title>按顺序加载图片</title>
+        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/js_extend/</loc>
+    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript中继承总结(apply,call,prototype)</title>
+        <pubTime>2017-06-22T06:23:30.458Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/hexo/</loc>
+    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo命令教程</title>
+        <pubTime>2017-06-22T06:23:30.457Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/js-with/</loc>
+    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript中的with关键字</title>
+        <pubTime>2017-06-22T06:23:30.458Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/classOperate/</loc>
+    <lastmod>2017-06-22T06:23:30.457Z</lastmod>
+    <data>
+        <display>
+        <title>原生js操作类名的添加、移除、切换</title>
+        <pubTime>2017-06-22T06:23:30.457Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/github-bind-domain/</loc>
+    <lastmod>2017-06-22T06:23:30.457Z</lastmod>
+    <data>
+        <display>
+        <title>Github+Hexo绑定自己的域名</title>
+        <pubTime>2017-06-22T06:23:30.457Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
