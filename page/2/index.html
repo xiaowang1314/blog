@@ -197,6 +197,127 @@
 
       <div class="body-wrap">
   
+    <article id="post-loadImg" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/22/loadImg/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.459Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/loadImg/">按顺序加载图片</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景:"></a>使用场景:</h3><p>在那些需要在所有图片加载完后再执行后续函数时使用<br>比如我之前遇到的场景：</p>
+<ul>
+<li>上传多张图片，等所有图片上传完后再把获取到的图片地址ajax提交表单到后台</li>
+<li>canvas使用时按顺序绘制图片，不然会出现层级关系问题</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/***</div><div class="line"> *</div><div class="line"> * 按顺序加载图片</div><div class="line"> *</div><div class="line"> */</div><div class="line"> var arr=[<span class="string">'img/1.png'</span>,<span class="string">'img/2.png'</span>,<span class="string">'img/3.png'</span>,<span class="string">'img/4.png'</span>];</div><div class="line"> var <span class="built_in">test</span>=arr.slice();//数组copy防止直接操作原数组</div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">loadImg</span></span>() &#123;//递归方法</div><div class="line">     <span class="keyword">if</span>(test.length==0)&#123;</div><div class="line">         console.log(<span class="string">'end'</span>);</div><div class="line">         <span class="built_in">return</span>;</div><div class="line">     &#125;</div><div class="line">     var img=new Image();</div><div class="line">     img.onload=<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">         console.log(this.src);</div><div class="line">         loadImg();</div><div class="line">     &#125;</div><div class="line">     img.src=test.shift();</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> loadImg();</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js_extend" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/22/js_extend/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.458Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/js_extend/">Javascript中继承总结(apply,call,prototype)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="js中有三种继承方式"><a href="#js中有三种继承方式" class="headerlink" title="js中有三种继承方式"></a>js中有三种继承方式</h2><ul>
+<li>js原型(prototype)实现继承</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Person(name,age)&#123;  </div><div class="line">       this.name=name;  </div><div class="line">       this.age=age;  </div><div class="line">   &#125;  </div><div class="line">   Person.prototype.sayHello=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(<span class="string">"使用原型得到Name："</span>+this.name);  </div><div class="line">   &#125;  </div><div class="line">   var per=new Person(<span class="string">"小土豆"</span>,25);  </div><div class="line">   per.sayHello(); //输出：使用原型得到Name:小土豆</div><div class="line"></div><div class="line">     </div><div class="line">   <span class="keyword">function</span> <span class="function"><span class="title">Student</span></span>()&#123;&#125;  </div><div class="line">   Student.prototype=new Person(<span class="string">"洪如彤"</span>,21);  </div><div class="line">   var stu=new Student();  </div><div class="line">   Student.prototype.grade=5;  </div><div class="line">   Student.prototype.intr=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(this.grade);  </div><div class="line">   &#125;  </div><div class="line">   stu.sayHello();//输出：使用原型得到Name:洪如彤  </div><div class="line">   stu.intr();//输出：5</div></pre></td></tr></table></figure>
+<ul>
+<li>构造函数实现继承</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Parent(name)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.sayParent=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Parent:"</span>+this.name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="keyword">function</span>  Child(name,age)&#123;  </div><div class="line">        this.tempMethod=Parent;  </div><div class="line">        this.tempMethod(name);  </div><div class="line">        this.age=age;  </div><div class="line">        this.sayChild=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Child:"</span>+this.name+<span class="string">"age:"</span>+this.age);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    var parent=new Parent(<span class="string">"江剑臣"</span>);  </div><div class="line">    parent.sayParent(); //输出：“Parent:江剑臣”  </div><div class="line">    var child=new Child(<span class="string">"李鸣"</span>,24); </div><div class="line">    child.sayChild();  //输出：“Child:李鸣 age:24”</div></pre></td></tr></table></figure>
+<ul>
+<li>call , apply实现继承</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Person(name,age,love)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.age=age;  </div><div class="line">        this.love=love;  </div><div class="line">        this.say=<span class="keyword">function</span> <span class="function"><span class="title">say</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"姓名："</span>+name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call方式  </div><div class="line">    <span class="keyword">function</span> student(name,age)&#123;  </div><div class="line">        Person.call(this,name,age);  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //apply方式  </div><div class="line">    <span class="keyword">function</span> teacher(name,love)&#123;  </div><div class="line">        Person.apply(this,[name,love]);  </div><div class="line">        //Person.apply(this,arguments); //跟上句一样的效果，arguments  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call与aplly的异同：  </div><div class="line">    //1,第一个参数this都一样,指当前对象  </div><div class="line">    //2,第二个参数不一样：call的是一个个的参数列表；apply的是一个数组（arguments也可以）  </div><div class="line"></div><div class="line">    var per=new Person(<span class="string">"武凤楼"</span>,25,<span class="string">"魏荧屏"</span>); //输出：“武凤楼”  </div><div class="line">    per.say();  </div><div class="line">    var stu=new student(<span class="string">"曹玉"</span>,18);//输出：“曹玉”  </div><div class="line">    stu.say();  </div><div class="line">    var tea=new teacher(<span class="string">"秦杰"</span>,16);//输出：“秦杰”  </div><div class="line">    tea.say();</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js-with" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -284,11 +405,11 @@
 
 
   
-    <article id="post-js_extend" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-classOperate" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/22/js_extend/" class="article-date">
-  	<time datetime="2017-06-22T06:23:30.458Z" itemprop="datePublished">2017-06-22</time>
+      <a href="/2017/06/22/classOperate/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.457Z" itemprop="datePublished">2017-06-22</time>
 </a>
     </div>
   
@@ -301,7 +422,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/js_extend/">Javascript中继承总结(apply,call,prototype)</a>
+      <a class="article-title" href="/2017/06/22/classOperate/">原生js操作类名的添加、移除、切换</a>
     </h1>
   
 
@@ -310,19 +431,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="js中有三种继承方式"><a href="#js中有三种继承方式" class="headerlink" title="js中有三种继承方式"></a>js中有三种继承方式</h2><ul>
-<li>js原型(prototype)实现继承</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Person(name,age)&#123;  </div><div class="line">       this.name=name;  </div><div class="line">       this.age=age;  </div><div class="line">   &#125;  </div><div class="line">   Person.prototype.sayHello=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(<span class="string">"使用原型得到Name："</span>+this.name);  </div><div class="line">   &#125;  </div><div class="line">   var per=new Person(<span class="string">"小土豆"</span>,25);  </div><div class="line">   per.sayHello(); //输出：使用原型得到Name:小土豆</div><div class="line"></div><div class="line">     </div><div class="line">   <span class="keyword">function</span> <span class="function"><span class="title">Student</span></span>()&#123;&#125;  </div><div class="line">   Student.prototype=new Person(<span class="string">"洪如彤"</span>,21);  </div><div class="line">   var stu=new Student();  </div><div class="line">   Student.prototype.grade=5;  </div><div class="line">   Student.prototype.intr=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(this.grade);  </div><div class="line">   &#125;  </div><div class="line">   stu.sayHello();//输出：使用原型得到Name:洪如彤  </div><div class="line">   stu.intr();//输出：5</div></pre></td></tr></table></figure>
-<ul>
-<li>构造函数实现继承</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Parent(name)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.sayParent=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Parent:"</span>+this.name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="keyword">function</span>  Child(name,age)&#123;  </div><div class="line">        this.tempMethod=Parent;  </div><div class="line">        this.tempMethod(name);  </div><div class="line">        this.age=age;  </div><div class="line">        this.sayChild=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Child:"</span>+this.name+<span class="string">"age:"</span>+this.age);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    var parent=new Parent(<span class="string">"江剑臣"</span>);  </div><div class="line">    parent.sayParent(); //输出：“Parent:江剑臣”  </div><div class="line">    var child=new Child(<span class="string">"李鸣"</span>,24); </div><div class="line">    child.sayChild();  //输出：“Child:李鸣 age:24”</div></pre></td></tr></table></figure>
-<ul>
-<li>call , apply实现继承</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Person(name,age,love)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.age=age;  </div><div class="line">        this.love=love;  </div><div class="line">        this.say=<span class="keyword">function</span> <span class="function"><span class="title">say</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"姓名："</span>+name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call方式  </div><div class="line">    <span class="keyword">function</span> student(name,age)&#123;  </div><div class="line">        Person.call(this,name,age);  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //apply方式  </div><div class="line">    <span class="keyword">function</span> teacher(name,love)&#123;  </div><div class="line">        Person.apply(this,[name,love]);  </div><div class="line">        //Person.apply(this,arguments); //跟上句一样的效果，arguments  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call与aplly的异同：  </div><div class="line">    //1,第一个参数this都一样,指当前对象  </div><div class="line">    //2,第二个参数不一样：call的是一个个的参数列表；apply的是一个数组（arguments也可以）  </div><div class="line"></div><div class="line">    var per=new Person(<span class="string">"武凤楼"</span>,25,<span class="string">"魏荧屏"</span>); //输出：“武凤楼”  </div><div class="line">    per.say();  </div><div class="line">    var stu=new student(<span class="string">"曹玉"</span>,18);//输出：“曹玉”  </div><div class="line">    stu.say();  </div><div class="line">    var tea=new teacher(<span class="string">"秦杰"</span>,16);//输出：“秦杰”  </div><div class="line">    tea.say();</div></pre></td></tr></table></figure>
-
+        <p>废话不多说直接上代码</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;meta name=<span class="string">"renderer"</span> content=<span class="string">"webkit"</span>&gt;</div><div class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span>&gt;</div><div class="line">    &lt;meta name=<span class="string">"viewport"</span>content=<span class="string">"width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</div><div class="line">    &lt;title&gt;类名加、减、切换&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        .btn1&#123;color: <span class="comment">#00AA88;&#125;</span></div><div class="line">        .btn2&#123;color: yellow;&#125;</div><div class="line">        .btn3&#123;color: red;&#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;a id=<span class="string">"btn"</span> href=<span class="string">"#"</span> class=<span class="string">"btn1 btn2 btn3"</span>&gt;Test&lt;/a&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    //类名加、移除、切换</div><div class="line">    var CName=&#123;</div><div class="line">        /**</div><div class="line">         * H5 API classList是否存在</div><div class="line">         * */</div><div class="line">        hasClassList:<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">            <span class="built_in">return</span> (<span class="string">'classList'</span> <span class="keyword">in</span> document.documentElement);</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         * 用于匹配类名存在与否</div><div class="line">         * @param name 类名</div><div class="line">         * @returns &#123;RegExp&#125;</div><div class="line">         */</div><div class="line">        reg:<span class="keyword">function</span> (name) &#123;</div><div class="line">            <span class="built_in">return</span> new RegExp(<span class="string">"(\\s|^)"</span>+name+<span class="string">"(\\s+|$)"</span>);</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         * 类名是否存在</div><div class="line">         * @param obj 元素对象</div><div class="line">         * @param name 类名</div><div class="line">         * @returns &#123;boolean&#125;</div><div class="line">         */</div><div class="line">        hasClass:<span class="keyword">function</span> (obj,name) &#123;</div><div class="line">            <span class="keyword">if</span>(this.hasClassList())&#123;</div><div class="line">               <span class="built_in">return</span> obj.classList.contains(name);</div><div class="line">            &#125;</div><div class="line">            <span class="built_in">return</span> this.reg(name).<span class="built_in">test</span>(obj.className);</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         * 加类名</div><div class="line">         * @param obj 元素对象</div><div class="line">         * @param name 类名</div><div class="line">         */</div><div class="line">        addClass:<span class="keyword">function</span> (obj,name) &#123;</div><div class="line">            <span class="keyword">if</span>(this.hasClassList())&#123;</div><div class="line">                obj.classList.add(name);</div><div class="line">                <span class="built_in">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(!this.hasClass(obj,name))&#123;</div><div class="line">               obj.className=obj.className+<span class="string">" "</span>+name;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         * 移除类名</div><div class="line">         * @param obj 元素对象</div><div class="line">         * @param name 类名</div><div class="line">         */</div><div class="line">        removeClass:<span class="keyword">function</span> (obj,name) &#123;</div><div class="line">            <span class="keyword">if</span>(this.hasClassList())&#123;</div><div class="line">                obj.classList.remove(name);</div><div class="line">                <span class="built_in">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(this.hasClass(obj,name))&#123;</div><div class="line">                obj.className=obj.className.replace(this.reg(name),<span class="string">" "</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         *类名切换(存在则移除不存在则添加)</div><div class="line">         * @param obj 元素对象</div><div class="line">         * @param name 类名</div><div class="line">         */</div><div class="line">        toggleClass:<span class="keyword">function</span> (obj,name) &#123;</div><div class="line">            <span class="keyword">if</span>(this.hasClassList())&#123;</div><div class="line">                obj.classList.toggle(name);</div><div class="line">                <span class="built_in">return</span>;</div><div class="line">            &#125;</div><div class="line">            this.hasClass(obj,name) ? this.removeClass(obj,name) : this.addClass(obj,name);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var obj=document.getElementById(<span class="string">'btn'</span>);</div><div class="line">    //   console.log(CName.hasClassList());</div><div class="line">    CName.removeClass(obj,<span class="string">'btn3'</span>);</div><div class="line">//    CName.addClass(obj,<span class="string">'btn3'</span>);</div><div class="line">//    CName.toggleClass(obj,<span class="string">'btn3'</span>);</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -456,59 +566,6 @@
 </li>
 </ul>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-classOperate" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/06/22/classOperate/" class="article-date">
-  	<time datetime="2017-06-22T06:23:30.457Z" itemprop="datePublished">2017-06-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/classOperate/">原生js操作类名的添加、移除、切换</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>废话不多说直接上代码</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;meta name=<span class="string">"renderer"</span> content=<span class="string">"webkit"</span>&gt;</div><div class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span>&gt;</div><div class="line">    &lt;meta name=<span class="string">"viewport"</span>content=<span class="string">"width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</div><div class="line">    &lt;title&gt;类名加、减、切换&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        .btn1&#123;color: <span class="comment">#00AA88;&#125;</span></div><div class="line">        .btn2&#123;color: yellow;&#125;</div><div class="line">        .btn3&#123;color: red;&#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;a id=<span class="string">"btn"</span> href=<span class="string">"#"</span> class=<span class="string">"btn1 btn2 btn3"</span>&gt;Test&lt;/a&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    //类名加、移除、切换</div><div class="line">    var CName=&#123;</div><div class="line">        /**</div><div class="line">         * H5 API classList是否存在</div><div class="line">         * */</div><div class="line">        hasClassList:<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">            <span class="built_in">return</span> (<span class="string">'classList'</span> <span class="keyword">in</span> document.documentElement);</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         * 用于匹配类名存在与否</div><div class="line">         * @param name 类名</div><div class="line">         * @returns &#123;RegExp&#125;</div><div class="line">         */</div><div class="line">        reg:<span class="keyword">function</span> (name) &#123;</div><div class="line">            <span class="built_in">return</span> new RegExp(<span class="string">"(\\s|^)"</span>+name+<span class="string">"(\\s+|$)"</span>);</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         * 类名是否存在</div><div class="line">         * @param obj 元素对象</div><div class="line">         * @param name 类名</div><div class="line">         * @returns &#123;boolean&#125;</div><div class="line">         */</div><div class="line">        hasClass:<span class="keyword">function</span> (obj,name) &#123;</div><div class="line">            <span class="keyword">if</span>(this.hasClassList())&#123;</div><div class="line">               <span class="built_in">return</span> obj.classList.contains(name);</div><div class="line">            &#125;</div><div class="line">            <span class="built_in">return</span> this.reg(name).<span class="built_in">test</span>(obj.className);</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         * 加类名</div><div class="line">         * @param obj 元素对象</div><div class="line">         * @param name 类名</div><div class="line">         */</div><div class="line">        addClass:<span class="keyword">function</span> (obj,name) &#123;</div><div class="line">            <span class="keyword">if</span>(this.hasClassList())&#123;</div><div class="line">                obj.classList.add(name);</div><div class="line">                <span class="built_in">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(!this.hasClass(obj,name))&#123;</div><div class="line">               obj.className=obj.className+<span class="string">" "</span>+name;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         * 移除类名</div><div class="line">         * @param obj 元素对象</div><div class="line">         * @param name 类名</div><div class="line">         */</div><div class="line">        removeClass:<span class="keyword">function</span> (obj,name) &#123;</div><div class="line">            <span class="keyword">if</span>(this.hasClassList())&#123;</div><div class="line">                obj.classList.remove(name);</div><div class="line">                <span class="built_in">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(this.hasClass(obj,name))&#123;</div><div class="line">                obj.className=obj.className.replace(this.reg(name),<span class="string">" "</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        /**</div><div class="line">         *类名切换(存在则移除不存在则添加)</div><div class="line">         * @param obj 元素对象</div><div class="line">         * @param name 类名</div><div class="line">         */</div><div class="line">        toggleClass:<span class="keyword">function</span> (obj,name) &#123;</div><div class="line">            <span class="keyword">if</span>(this.hasClassList())&#123;</div><div class="line">                obj.classList.toggle(name);</div><div class="line">                <span class="built_in">return</span>;</div><div class="line">            &#125;</div><div class="line">            this.hasClass(obj,name) ? this.removeClass(obj,name) : this.addClass(obj,name);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var obj=document.getElementById(<span class="string">'btn'</span>);</div><div class="line">    //   console.log(CName.hasClassList());</div><div class="line">    CName.removeClass(obj,<span class="string">'btn3'</span>);</div><div class="line">//    CName.addClass(obj,<span class="string">'btn3'</span>);</div><div class="line">//    CName.toggleClass(obj,<span class="string">'btn3'</span>);</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
       
     </div>
     

@@ -6,18 +6,18 @@
   <meta name="google-site-verification" content="HUgXkQaRe9nIxrKFN_x9VJLwyWYL-bUD95XgZ6RyelY" />
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>按顺序加载图片 | Potato-前端-自学 - 一个人追寻的故事 - 本无意与众不同，怎奈何品味出众</title>
+  <title>Node.js原生表單提交 | Potato-前端-自学 - 一个人追寻的故事 - 本无意与众不同，怎奈何品味出众</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用场景:在那些需要在所有图片加载完后再执行后续函数时使用比如我之前遇到的场景：  上传多张图片，等所有图片上传完后再把获取到的图片地址ajax提交表单到后台 canvas使用时按顺序绘制图片，不然会出现层级关系问题  12345678910111213141516171819202122/*** * * 按顺序加载图片 * */ var arr=[&apos;img/1.png&apos;,&apos;img/2.png&apos;,">
+  <meta name="description" content="node.js代碼1234567891011121314151617181920212223242526272829303132333435let http = require(&amp;apos;http&amp;apos;);let querystring = require(&amp;apos;querystring&amp;apos;);const url = require(&amp;apos;url&amp;apos;);let s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="按顺序加载图片">
-<meta property="og:url" content="http://wzh6.cn/2017/06/22/loadImg/index.html">
+<meta property="og:title" content="Node.js原生表單提交">
+<meta property="og:url" content="http://wzh6.cn/2017/06/23/nodejs-form-send/index.html">
 <meta property="og:site_name" content="Potato-前端-自学 - 一个人追寻的故事 - 本无意与众不同，怎奈何品味出众">
-<meta property="og:description" content="使用场景:在那些需要在所有图片加载完后再执行后续函数时使用比如我之前遇到的场景：  上传多张图片，等所有图片上传完后再把获取到的图片地址ajax提交表单到后台 canvas使用时按顺序绘制图片，不然会出现层级关系问题  12345678910111213141516171819202122/*** * * 按顺序加载图片 * */ var arr=[&apos;img/1.png&apos;,&apos;img/2.png&apos;,">
-<meta property="og:updated_time" content="2017-06-22T06:23:30.459Z">
+<meta property="og:description" content="node.js代碼1234567891011121314151617181920212223242526272829303132333435let http = require(&amp;apos;http&amp;apos;);let querystring = require(&amp;apos;querystring&amp;apos;);const url = require(&amp;apos;url&amp;apos;);let s">
+<meta property="og:updated_time" content="2017-06-23T07:39:52.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="按顺序加载图片">
-<meta name="twitter:description" content="使用场景:在那些需要在所有图片加载完后再执行后续函数时使用比如我之前遇到的场景：  上传多张图片，等所有图片上传完后再把获取到的图片地址ajax提交表单到后台 canvas使用时按顺序绘制图片，不然会出现层级关系问题  12345678910111213141516171819202122/*** * * 按顺序加载图片 * */ var arr=[&apos;img/1.png&apos;,&apos;img/2.png&apos;,">
+<meta name="twitter:title" content="Node.js原生表單提交">
+<meta name="twitter:description" content="node.js代碼1234567891011121314151617181920212223242526272829303132333435let http = require(&amp;apos;http&amp;apos;);let querystring = require(&amp;apos;querystring&amp;apos;);const url = require(&amp;apos;url&amp;apos;);let s">
   
     <link rel="alternative" href="/atom.xml" title="Potato-前端-自学 - 一个人追寻的故事 - 本无意与众不同，怎奈何品味出众" type="application/atom+xml">
   
@@ -199,11 +199,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-loadImg" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-nodejs-form-send" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/22/loadImg/" class="article-date">
-  	<time datetime="2017-06-22T06:23:30.459Z" itemprop="datePublished">2017-06-22</time>
+      <a href="/2017/06/23/nodejs-form-send/" class="article-date">
+  	<time datetime="2017-06-23T07:36:00.953Z" itemprop="datePublished">2017-06-23</time>
 </a>
     </div>
   
@@ -216,7 +216,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      按顺序加载图片
+      Node.js原生表單提交
     </h1>
   
 
@@ -232,12 +232,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景:"></a>使用场景:</h3><p>在那些需要在所有图片加载完后再执行后续函数时使用<br>比如我之前遇到的场景：</p>
-<ul>
-<li>上传多张图片，等所有图片上传完后再把获取到的图片地址ajax提交表单到后台</li>
-<li>canvas使用时按顺序绘制图片，不然会出现层级关系问题</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/***</div><div class="line"> *</div><div class="line"> * 按顺序加载图片</div><div class="line"> *</div><div class="line"> */</div><div class="line"> var arr=[<span class="string">'img/1.png'</span>,<span class="string">'img/2.png'</span>,<span class="string">'img/3.png'</span>,<span class="string">'img/4.png'</span>];</div><div class="line"> var <span class="built_in">test</span>=arr.slice();//数组copy防止直接操作原数组</div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">loadImg</span></span>() &#123;//递归方法</div><div class="line">     <span class="keyword">if</span>(test.length==0)&#123;</div><div class="line">         console.log(<span class="string">'end'</span>);</div><div class="line">         <span class="built_in">return</span>;</div><div class="line">     &#125;</div><div class="line">     var img=new Image();</div><div class="line">     img.onload=<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">         console.log(this.src);</div><div class="line">         loadImg();</div><div class="line">     &#125;</div><div class="line">     img.src=test.shift();</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> loadImg();</div></pre></td></tr></table></figure>
+        <h3 id="node-js代碼"><a href="#node-js代碼" class="headerlink" title="node.js代碼"></a>node.js代碼</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">let http = require(&apos;http&apos;);</div><div class="line">let querystring = require(&apos;querystring&apos;);</div><div class="line">const url = require(&apos;url&apos;);</div><div class="line"></div><div class="line">let server = http.createServer((req, res) =&gt; &#123;</div><div class="line">    res.writeHead(200,&#123;&apos;content-type&apos;:&apos;text/html;charset=utf8&apos;&#125;);</div><div class="line">    let urlObj=url.parse(req.url);</div><div class="line">    let reqUrl=urlObj.pathname;</div><div class="line">	if(reqUrl === &quot;/upload&quot; &amp;&amp; req.method.toLowerCase() === &quot;get&quot;)&#123;</div><div class="line">		res.end(&apos;&lt;form action=&quot;/upload&quot; enctype=&quot;application/x-www-form-urlencoded&quot; method=&quot;post&quot;&gt;&apos;+</div><div class="line">            &apos;&lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;用户名&quot;/&gt;&apos;+</div><div class="line">            &apos;&lt;input type=&quot;text&quot; name=&quot;age&quot; placeholder=&quot;年龄&quot;/&gt;&apos;+</div><div class="line">            &apos;&lt;input type=&quot;text&quot; name=&quot;sex&quot; placeholder=&quot;性别&quot;/&gt;&apos;+</div><div class="line">            &apos;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;&apos;+</div><div class="line">            &apos;&lt;/form&gt;&apos;);</div><div class="line">	&#125;else if(reqUrl === &quot;/upload&quot; &amp;&amp; req.method.toLowerCase() === &quot;post&quot;)&#123;</div><div class="line">       let body=&apos;&apos;;</div><div class="line">       req.on(&apos;data&apos;,function(chunk)&#123;</div><div class="line">           body+=chunk; </div><div class="line">       &#125;);</div><div class="line">       req.on(&apos;end&apos;,function()&#123;</div><div class="line">           let data=querystring.parse(body);</div><div class="line">            console.log(data);</div><div class="line">           res.end(&apos;提交成功&apos;+JSON.stringify(data));</div><div class="line">       &#125;);</div><div class="line">	&#125;else&#123;</div><div class="line">        res.end(&apos;index首页&apos;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">server.listen(&apos;3000&apos;, function() &#123;</div><div class="line">	console.log(&apos;server started port 3000&apos;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -246,18 +241,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/06/22/promiseAjax/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Promise和ajax的封装
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/22/js_extend/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Javascript中继承总结(apply,call,prototype)</div>
+    <a href="/2017/06/23/node-debug/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js 热部署加debug模式</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -292,7 +278,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="loadImg" data-title="按顺序加载图片" data-url="http://wzh6.cn/2017/06/22/loadImg/"></div>
+	<div class="ds-thread" data-thread-key="nodejs-form-send" data-title="Node.js原生表單提交" data-url="http://wzh6.cn/2017/06/23/nodejs-form-send/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
