@@ -19,3 +19,7 @@ Debugging with node.js
 ### Debug图片示例
 
 ![Node.js Debug](https://raw.githubusercontent.com/xiaowang1314/blog/master/img/node-debug.png)
+
+
+##### 参考链接
+1. [node-inspector](https://github.com/node-inspector/node-inspector)

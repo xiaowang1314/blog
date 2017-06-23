@@ -44,7 +44,7 @@ app.get('/', function(req, res) {
 
 
 ##### 参考链接
-1. [Node.js官网](http://nodejs.cn/api/synopsis.html)
+1. [Node.js官网（v=7.10.0）](http://nodejs.cn/api/synopsis.html)
 2. [express官网](http://www.expressjs.com.cn/4x/api.html)
 3. [multer](https://github.com/expressjs/multer)
 4. [body-parser](https://github.com/expressjs/body-parser)
