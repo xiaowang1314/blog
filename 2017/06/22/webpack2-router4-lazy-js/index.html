@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="BqQsqbUmSF" />
+  <meta name="google-site-verification" content="HUgXkQaRe9nIxrKFN_x9VJLwyWYL-bUD95XgZ6RyelY" />
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>webpack2 react-router4 懒加载 | Potato-前端-自学 - 一个人追寻的故事 - 本无意与众不同，怎奈何品味出众</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="版本号：  react-router：4.1.1 react-router-dom：4.1.1 bundle-loader：0.5.5 (关键是这个插件) webpack: 2.5.1  Bundle.js 按需加载控制123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack2 react-router4 懒加载">
+<meta property="og:url" content="http://wzh6.cn/2017/06/22/webpack2-router4-lazy-js/index.html">
+<meta property="og:site_name" content="Potato-前端-自学 - 一个人追寻的故事 - 本无意与众不同，怎奈何品味出众">
+<meta property="og:description" content="版本号：  react-router：4.1.1 react-router-dom：4.1.1 bundle-loader：0.5.5 (关键是这个插件) webpack: 2.5.1  Bundle.js 按需加载控制123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
+<meta property="og:updated_time" content="2017-06-22T06:23:30.461Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack2 react-router4 懒加载">
+<meta name="twitter:description" content="版本号：  react-router：4.1.1 react-router-dom：4.1.1 bundle-loader：0.5.5 (关键是这个插件) webpack: 2.5.1  Bundle.js 按需加载控制123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
+  
+    <link rel="alternative" href="/atom.xml" title="Potato-前端-自学 - 一个人追寻的故事 - 本无意与众不同，怎奈何品味出众" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Potato</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xiaowang1314" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Potato</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/head.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Potato</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xiaowang1314" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-webpack2-router4-lazy-js" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/22/webpack2-router4-lazy-js/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.461Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack2 react-router4 懒加载
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>版本号：</p>
+<ol>
+<li>react-router：4.1.1</li>
+<li>react-router-dom：4.1.1</li>
+<li><a href="https://github.com/webpack-contrib/bundle-loader" target="_blank" rel="external">bundle-loader：0.5.5 (关键是这个插件)</a></li>
+<li>webpack: 2.5.1</li>
+</ol>
+<h2 id="Bundle-js-按需加载控制"><a href="#Bundle-js-按需加载控制" class="headerlink" title="Bundle.js 按需加载控制"></a>Bundle.js 按需加载控制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/*</div><div class="line"> *  代码分割模型，调用该模型的方式如下。</div><div class="line"> *  name=[name]：文件名</div><div class="line"> *  ../page/Profile:文件路径</div><div class="line"> *  lazy：启用懒加载</div><div class="line"> *  import SearchContainer from &apos;bundle-loader?lazy&amp;name=[name]!../page/Profile&apos;;</div><div class="line"> *</div><div class="line"> *  const Search = () =&gt; (</div><div class="line"> *      &lt;Bundle load=&#123;ProfileContainer&#125;&gt;</div><div class="line"> *          &#123;(Profile) =&gt; &lt;Profile /&gt;&#125;</div><div class="line"> *      &lt;/Bundle&gt;</div><div class="line"> *  )</div><div class="line"> */</div><div class="line">import React, &#123; Component &#125; from &apos;react&apos;</div><div class="line"></div><div class="line"></div><div class="line">class Bundle extends Component &#123;</div><div class="line"></div><div class="line">    state = &#123;</div><div class="line">        // short for &quot;module&quot; but that&apos;s a keyword in js, so &quot;mod&quot;</div><div class="line">        mod: null</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentWillMount() &#123;</div><div class="line">        this.load(this.props)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentWillReceiveProps(nextProps) &#123;</div><div class="line">        if (nextProps.load !== this.props.load) &#123;</div><div class="line">            this.load(nextProps)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    load(props) &#123;</div><div class="line">        this.setState(&#123;</div><div class="line">            mod: null</div><div class="line">        &#125;)</div><div class="line">        props.load((mod) =&gt; &#123;</div><div class="line">            this.setState(&#123;</div><div class="line">                // handle both es imports and cjs</div><div class="line">                mod: mod.default ? mod.default : mod</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        if (!this.state.mod) return false;</div><div class="line">        return this.props.children(this.state.mod)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Bundle;</div></pre></td></tr></table></figure>
+<h2 id="Route-js-路由配置文件"><a href="#Route-js-路由配置文件" class="headerlink" title="Route.js 路由配置文件"></a>Route.js 路由配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">import React,&#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    BrowserRouter as Router,</div><div class="line">    Route,</div><div class="line">&#125; from &apos;react-router-dom&apos;;</div><div class="line">import ReactCSSTransitionGroup from &apos;react-addons-css-transition-group&apos;;</div><div class="line">// bundle模型用来异步加载组件</div><div class="line">import Bundle from &apos;./bundle.js&apos;;</div><div class="line">//同步引入</div><div class="line">import Home from &apos;../page/Home&apos;</div><div class="line">// 异步引入</div><div class="line">import ProfileContainer from &apos;bundle-loader?lazy&amp;name=[name]!../page/Profile&apos;;</div><div class="line"></div><div class="line"></div><div class="line">const Profile = () =&gt; (</div><div class="line">    &lt;Bundle load=&#123;ProfileContainer&#125; &gt;</div><div class="line">        &#123;(Profile) =&gt; &lt;Profile /&gt;&#125;</div><div class="line">    &lt;/Bundle&gt;</div><div class="line">)</div><div class="line"></div><div class="line">const RouteConfig = (</div><div class="line">    &lt;Router&gt;</div><div class="line">        &lt;Route render=&#123;(&#123;...props&#125;)=&gt; &#123;</div><div class="line">            return (&lt;ReactCSSTransitionGroup</div><div class="line">                transitionName=&quot;fade&quot;</div><div class="line">                transitionEnterTimeout=&#123;300&#125;</div><div class="line">                transitionLeaveTimeout=&#123;300&#125;&gt;</div><div class="line">                &lt;div key=&#123;props.location.pathname&#125;&gt;</div><div class="line">                    &lt;Route exact path=&quot;/&quot; component=&#123;Home&#125;/&gt;</div><div class="line">                    &lt;Route  path=&quot;/profile&quot;  component=&#123;Profile&#125; /&gt;</div><div class="line">                &lt;/div&gt;</div><div class="line">            &lt;/ReactCSSTransitionGroup&gt;)</div><div class="line">        &#125;&#125;/&gt;</div><div class="line"></div><div class="line">    &lt;/Router&gt;</div><div class="line">)</div><div class="line"></div><div class="line">export default RouteConfig;</div></pre></td></tr></table></figure>
+<h2 id="webpack-config-dev-js-配置文件"><a href="#webpack-config-dev-js-配置文件" class="headerlink" title="webpack.config.dev.js 配置文件"></a>webpack.config.dev.js 配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    output: &#123;</div><div class="line">        //要加上这个</div><div class="line">        chunkFilename: &apos;js/[name].[chunkhash:5].min.js&apos;,</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>Note:由于这种配置时组件获取不到路由属性所以在组件需要获取路由属性时，请使用 import { withRouter } from ‘react-router’</p>
+<h2 id="example-Profile组件："><a href="#example-Profile组件：" class="headerlink" title="example Profile组件："></a>example Profile组件：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by potato on 2017/4/28.</div><div class="line"> */</div><div class="line"></div><div class="line">import React, &#123;</div><div class="line">    Component</div><div class="line">&#125; from &apos;react&apos;;</div><div class="line">import &#123; withRouter &#125; from &apos;react-router&apos;;//关键是这个包</div><div class="line"></div><div class="line">class Profile extends Component &#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        super(props);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;div&gt;</div><div class="line">                Profile 组件 DEMO</div><div class="line">            &lt;/div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default withRouter(Profile);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/22/node-server/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Node服务器搭建
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/22/webpack2-router2-lazy-js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack2 react-router2 懒加载</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="webpack2-router4-lazy-js" data-title="webpack2 react-router4 懒加载" data-url="http://wzh6.cn/2017/06/22/webpack2-router4-lazy-js/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Potato
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/requirejs.js"></script>
+<script src="/js/jquery-2.0.3.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  </div>
+</body>
+</html>
