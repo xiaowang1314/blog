@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://wzh6.cn/2017/06/23/node-debug/</loc>
+    <lastmod>2017-06-23T02:36:55.670Z</lastmod>
+    <data>
+        <display>
+        <title>Node.js 热部署加debug模式</title>
+        <pubTime>2017-06-23T02:24:34.896Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wzh6.cn/2017/06/22/uploadImages/</loc>
     <lastmod>2017-06-22T07:18:08.261Z</lastmod>
     <data>
@@ -64,21 +79,6 @@
 
     
   <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack2-build/</loc>
-    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
-    <data>
-        <display>
-        <title>webpack2 配置</title>
-        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://wzh6.cn/2017/06/22/webpack1-build/</loc>
     <lastmod>2017-06-22T06:23:30.460Z</lastmod>
     <data>
@@ -94,12 +94,12 @@
 
     
   <url>
-    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
-    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-build/</loc>
+    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
     <data>
         <display>
-        <title>Promise和ajax的封装</title>
-        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
+        <title>webpack2 配置</title>
+        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
         
          
            
@@ -129,6 +129,21 @@
     <data>
         <display>
         <title>按顺序加载图片</title>
+        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
+    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <data>
+        <display>
+        <title>Promise和ajax的封装</title>
         <pubTime>2017-06-22T06:23:30.459Z</pubTime>
         
          

@@ -76,7 +76,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -196,6 +196,70 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-js_extend" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/22/js_extend/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.458Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/js_extend/">Javascript中继承总结(apply,call,prototype)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="js中有三种继承方式"><a href="#js中有三种继承方式" class="headerlink" title="js中有三种继承方式"></a>js中有三种继承方式</h2><ul>
+<li>js原型(prototype)实现继承</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Person(name,age)&#123;  </div><div class="line">       this.name=name;  </div><div class="line">       this.age=age;  </div><div class="line">   &#125;  </div><div class="line">   Person.prototype.sayHello=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(<span class="string">"使用原型得到Name："</span>+this.name);  </div><div class="line">   &#125;  </div><div class="line">   var per=new Person(<span class="string">"小土豆"</span>,25);  </div><div class="line">   per.sayHello(); //输出：使用原型得到Name:小土豆</div><div class="line"></div><div class="line">     </div><div class="line">   <span class="keyword">function</span> <span class="function"><span class="title">Student</span></span>()&#123;&#125;  </div><div class="line">   Student.prototype=new Person(<span class="string">"洪如彤"</span>,21);  </div><div class="line">   var stu=new Student();  </div><div class="line">   Student.prototype.grade=5;  </div><div class="line">   Student.prototype.intr=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(this.grade);  </div><div class="line">   &#125;  </div><div class="line">   stu.sayHello();//输出：使用原型得到Name:洪如彤  </div><div class="line">   stu.intr();//输出：5</div></pre></td></tr></table></figure>
+<ul>
+<li>构造函数实现继承</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Parent(name)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.sayParent=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Parent:"</span>+this.name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="keyword">function</span>  Child(name,age)&#123;  </div><div class="line">        this.tempMethod=Parent;  </div><div class="line">        this.tempMethod(name);  </div><div class="line">        this.age=age;  </div><div class="line">        this.sayChild=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Child:"</span>+this.name+<span class="string">"age:"</span>+this.age);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    var parent=new Parent(<span class="string">"江剑臣"</span>);  </div><div class="line">    parent.sayParent(); //输出：“Parent:江剑臣”  </div><div class="line">    var child=new Child(<span class="string">"李鸣"</span>,24); </div><div class="line">    child.sayChild();  //输出：“Child:李鸣 age:24”</div></pre></td></tr></table></figure>
+<ul>
+<li>call , apply实现继承</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Person(name,age,love)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.age=age;  </div><div class="line">        this.love=love;  </div><div class="line">        this.say=<span class="keyword">function</span> <span class="function"><span class="title">say</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"姓名："</span>+name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call方式  </div><div class="line">    <span class="keyword">function</span> student(name,age)&#123;  </div><div class="line">        Person.call(this,name,age);  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //apply方式  </div><div class="line">    <span class="keyword">function</span> teacher(name,love)&#123;  </div><div class="line">        Person.apply(this,[name,love]);  </div><div class="line">        //Person.apply(this,arguments); //跟上句一样的效果，arguments  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call与aplly的异同：  </div><div class="line">    //1,第一个参数this都一样,指当前对象  </div><div class="line">    //2,第二个参数不一样：call的是一个个的参数列表；apply的是一个数组（arguments也可以）  </div><div class="line"></div><div class="line">    var per=new Person(<span class="string">"武凤楼"</span>,25,<span class="string">"魏荧屏"</span>); //输出：“武凤楼”  </div><div class="line">    per.say();  </div><div class="line">    var stu=new student(<span class="string">"曹玉"</span>,18);//输出：“曹玉”  </div><div class="line">    stu.say();  </div><div class="line">    var tea=new teacher(<span class="string">"秦杰"</span>,16);//输出：“秦杰”  </div><div class="line">    tea.say();</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-js-with" class="article article-type-post" itemscope itemprop="blogPost">
   
