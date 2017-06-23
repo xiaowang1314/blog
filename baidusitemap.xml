@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://wzh6.cn/2017/06/23/node-debug/</loc>
-    <lastmod>2017-06-23T02:36:55.670Z</lastmod>
+    <lastmod>2017-06-23T02:44:51.422Z</lastmod>
     <data>
         <display>
         <title>Node.js 热部署加debug模式</title>
@@ -79,21 +79,6 @@
 
     
   <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack1-build/</loc>
-    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
-    <data>
-        <display>
-        <title>webpack1 配置</title>
-        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://wzh6.cn/2017/06/22/webpack2-build/</loc>
     <lastmod>2017-06-22T06:23:30.460Z</lastmod>
     <data>
@@ -109,12 +94,12 @@
 
     
   <url>
-    <loc>http://wzh6.cn/2017/06/22/mobile-layout/</loc>
-    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <loc>http://wzh6.cn/2017/06/22/webpack1-build/</loc>
+    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
     <data>
         <display>
-        <title>webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖</title>
-        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
+        <title>webpack1 配置</title>
+        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
         
          
            
@@ -139,11 +124,11 @@
 
     
   <url>
-    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
+    <loc>http://wzh6.cn/2017/06/22/mobile-layout/</loc>
     <lastmod>2017-06-22T06:23:30.459Z</lastmod>
     <data>
         <display>
-        <title>Promise和ajax的封装</title>
+        <title>webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖</title>
         <pubTime>2017-06-22T06:23:30.459Z</pubTime>
         
          
@@ -154,12 +139,12 @@
 
     
   <url>
-    <loc>http://wzh6.cn/2017/06/22/js_extend/</loc>
-    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
+    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
+    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
     <data>
         <display>
-        <title>Javascript中继承总结(apply,call,prototype)</title>
-        <pubTime>2017-06-22T06:23:30.458Z</pubTime>
+        <title>Promise和ajax的封装</title>
+        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
         
          
            
@@ -199,12 +184,12 @@
 
     
   <url>
-    <loc>http://wzh6.cn/2017/06/22/classOperate/</loc>
-    <lastmod>2017-06-22T06:23:30.457Z</lastmod>
+    <loc>http://wzh6.cn/2017/06/22/js_extend/</loc>
+    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
     <data>
         <display>
-        <title>原生js操作类名的添加、移除、切换</title>
-        <pubTime>2017-06-22T06:23:30.457Z</pubTime>
+        <title>Javascript中继承总结(apply,call,prototype)</title>
+        <pubTime>2017-06-22T06:23:30.458Z</pubTime>
         
          
            
@@ -219,6 +204,21 @@
     <data>
         <display>
         <title>Github+Hexo绑定自己的域名</title>
+        <pubTime>2017-06-22T06:23:30.457Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/classOperate/</loc>
+    <lastmod>2017-06-22T06:23:30.457Z</lastmod>
+    <data>
+        <display>
+        <title>原生js操作类名的添加、移除、切换</title>
         <pubTime>2017-06-22T06:23:30.457Z</pubTime>
         
          
