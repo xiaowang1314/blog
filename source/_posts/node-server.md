@@ -1,4 +1,7 @@
+---
 title: Node服务器搭建
+categories: Node.js
+tags: ['node.js','js','express']
 ---
 最近开始玩node.js想把自己学习的过程记录下来，从最简单的来吧
 

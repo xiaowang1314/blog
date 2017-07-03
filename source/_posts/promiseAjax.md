@@ -1,5 +1,7 @@
 ---
 title: Promise和ajax的封装
+categories: js
+tags: ['js']
 ---
 
 ## 代码如下:

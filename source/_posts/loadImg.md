@@ -1,5 +1,7 @@
 ---
 title: 按顺序加载图片
+categories: js
+tags: ['js']
 ---
 
 ### 使用场景:

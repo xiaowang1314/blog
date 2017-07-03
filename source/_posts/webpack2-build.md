@@ -1,5 +1,7 @@
 ---
 title: webpack2 配置
+categories: webpack2
+tags: ['webpack2']
 ---
 
 主要用于webpack react项目配置

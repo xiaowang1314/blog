@@ -1,5 +1,7 @@
 ---
 title: 原生js操作类名的添加、移除、切换
+categories: js
+tags: ['js','html']
 ---
 废话不多说直接上代码
 ## 代码:

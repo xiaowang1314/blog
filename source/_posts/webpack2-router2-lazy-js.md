@@ -1,5 +1,7 @@
 ---
 title: webpack2 react-router2 懒加载
+categories: webpack2
+tags: ['webpack2','react.js','router2']
 ---
 
 版本号：

@@ -1,5 +1,7 @@
 ---
 title: webpack1 配置
+categories: webpack1
+tags: ['webpack1']
 ---
 
 主要用于webpack react项目配置

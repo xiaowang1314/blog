@@ -1,4 +1,7 @@
+---
 title: webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖
+categories: css布局
+tags: ['html','css']
 ---
 下面我要介绍webapp上的布局方法：
 可以解决想隐藏滚动条、ios滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖或者被撑的老远等问题

@@ -1,5 +1,7 @@
 ---
 title: Node.js 热部署加debug模式
+categories: Node.js
+tags: ['node.js']
 ---
 
 ## 步骤

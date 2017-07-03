@@ -1,5 +1,7 @@
 ---
 title: Javascript中继承总结(apply,call,prototype)
+categories: js
+tags: ['js']
 ---
 
 ## js中有三种继承方式

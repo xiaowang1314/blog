@@ -1,4 +1,7 @@
+---
 title: 多图片上传
+categories: Node.js
+tags: ['node.js']
 ---
 
 以前写java的时候上传图片感觉蛮复杂的，就想看看神奇的node.js实现图片上传需要多少代码量,试过之后结果令人惊讶
