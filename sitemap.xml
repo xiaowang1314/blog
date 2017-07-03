@@ -2,86 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wzh6.cn/2017/06/23/nodejs-form-send/</loc>
+    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
     
-    <lastmod>2017-06-23T07:39:52.844Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/node-server/</loc>
-    
-    <lastmod>2017-06-23T05:45:44.610Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/23/node-debug/</loc>
-    
-    <lastmod>2017-06-23T03:09:42.347Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/uploadImages/</loc>
-    
-    <lastmod>2017-06-22T07:18:08.261Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack2-router4-lazy-js/</loc>
-    
-    <lastmod>2017-06-22T06:23:30.461Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack2-router2-lazy-js/</loc>
-    
-    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack2-build/</loc>
-    
-    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack1-build/</loc>
-    
-    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
+    <lastmod>2017-07-03T03:34:44.067Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wzh6.cn/2017/06/22/mobile-layout/</loc>
     
-    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
-    
-    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <lastmod>2017-07-03T03:34:15.915Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wzh6.cn/2017/06/22/loadImg/</loc>
     
-    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <lastmod>2017-07-03T03:33:43.645Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/js-with/</loc>
+    
+    <lastmod>2017-07-03T03:33:34.629Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wzh6.cn/2017/06/22/js_extend/</loc>
     
-    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
+    <lastmod>2017-07-03T03:33:25.900Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/github-bind-domain/</loc>
+    
+    <lastmod>2017-07-03T03:33:16.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/classOperate/</loc>
+    
+    <lastmod>2017-07-03T03:33:06.239Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/07/03/vue-banner/</loc>
+    
+    <lastmod>2017-07-03T03:32:26.260Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack1-build/</loc>
+    
+    <lastmod>2017-07-03T03:32:23.573Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-build/</loc>
+    
+    <lastmod>2017-07-03T03:32:19.048Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-router4-lazy-js/</loc>
+    
+    <lastmod>2017-07-03T03:32:11.301Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-router2-lazy-js/</loc>
+    
+    <lastmod>2017-07-03T03:32:06.869Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/uploadImages/</loc>
+    
+    <lastmod>2017-07-03T03:29:46.953Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/node-server/</loc>
+    
+    <lastmod>2017-07-03T03:28:56.901Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/23/nodejs-form-send/</loc>
+    
+    <lastmod>2017-07-03T03:28:42.524Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wzh6.cn/2017/06/23/node-debug/</loc>
+    
+    <lastmod>2017-07-03T03:27:37.780Z</lastmod>
     
   </url>
   
@@ -89,27 +117,6 @@
     <loc>http://wzh6.cn/2017/06/22/hexo/</loc>
     
     <lastmod>2017-06-22T06:23:30.458Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/js-with/</loc>
-    
-    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/github-bind-domain/</loc>
-    
-    <lastmod>2017-06-22T06:23:30.457Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/classOperate/</loc>
-    
-    <lastmod>2017-06-22T06:23:30.457Z</lastmod>
     
   </url>
   

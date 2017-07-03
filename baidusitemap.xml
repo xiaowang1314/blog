@@ -4,120 +4,20 @@
 
     
   <url>
-    <loc>http://wzh6.cn/2017/06/23/nodejs-form-send/</loc>
-    <lastmod>2017-06-23T07:39:52.844Z</lastmod>
+    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
+    <lastmod>2017-07-03T03:34:44.067Z</lastmod>
     <data>
         <display>
-        <title>Node.js原生表單提交</title>
-        <pubTime>2017-06-23T07:36:00.953Z</pubTime>
+        <title>Promise和ajax的封装</title>
+        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
         
+        <tag>js</tag>
+         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/node-server/</loc>
-    <lastmod>2017-06-23T05:45:44.610Z</lastmod>
-    <data>
-        <display>
-        <title>Node服务器搭建</title>
-        <pubTime>2017-06-22T06:28:33.708Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/23/node-debug/</loc>
-    <lastmod>2017-06-23T03:09:42.347Z</lastmod>
-    <data>
-        <display>
-        <title>Node.js 热部署加debug模式</title>
-        <pubTime>2017-06-23T02:24:34.896Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/uploadImages/</loc>
-    <lastmod>2017-06-22T07:18:08.261Z</lastmod>
-    <data>
-        <display>
-        <title>多图片上传</title>
-        <pubTime>2017-06-22T07:09:16.129Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack2-router4-lazy-js/</loc>
-    <lastmod>2017-06-22T06:23:30.461Z</lastmod>
-    <data>
-        <display>
-        <title>webpack2 react-router4 懒加载</title>
-        <pubTime>2017-06-22T06:23:30.461Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack2-router2-lazy-js/</loc>
-    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
-    <data>
-        <display>
-        <title>webpack2 react-router2 懒加载</title>
-        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack2-build/</loc>
-    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
-    <data>
-        <display>
-        <title>webpack2 配置</title>
-        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/webpack1-build/</loc>
-    <lastmod>2017-06-22T06:23:30.460Z</lastmod>
-    <data>
-        <display>
-        <title>webpack1 配置</title>
-        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
-        
-         
-           
+             
+              <breadCrumb title="js" url="http://wzh6.cn/categories/js/"/>
+          
         </display>
     </data>
     </url>
@@ -125,29 +25,21 @@
     
   <url>
     <loc>http://wzh6.cn/2017/06/22/mobile-layout/</loc>
-    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <lastmod>2017-07-03T03:34:15.915Z</lastmod>
     <data>
         <display>
         <title>webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖</title>
         <pubTime>2017-06-22T06:23:30.459Z</pubTime>
         
+        <tag>css</tag>
+         
+        <tag>html</tag>
+         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
-    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
-    <data>
-        <display>
-        <title>Promise和ajax的封装</title>
-        <pubTime>2017-06-22T06:23:30.459Z</pubTime>
-        
-         
-           
+             
+              <breadCrumb title="css布局" url="http://wzh6.cn/categories/css%E5%B8%83%E5%B1%80/"/>
+          
         </display>
     </data>
     </url>
@@ -155,44 +47,19 @@
     
   <url>
     <loc>http://wzh6.cn/2017/06/22/loadImg/</loc>
-    <lastmod>2017-06-22T06:23:30.459Z</lastmod>
+    <lastmod>2017-07-03T03:33:43.645Z</lastmod>
     <data>
         <display>
         <title>按顺序加载图片</title>
         <pubTime>2017-06-22T06:23:30.459Z</pubTime>
         
+        <tag>js</tag>
+         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/js_extend/</loc>
-    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript中继承总结(apply,call,prototype)</title>
-        <pubTime>2017-06-22T06:23:30.458Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wzh6.cn/2017/06/22/hexo/</loc>
-    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo命令教程</title>
-        <pubTime>2017-06-22T06:23:30.457Z</pubTime>
-        
-         
-           
+             
+              <breadCrumb title="js" url="http://wzh6.cn/categories/js/"/>
+          
         </display>
     </data>
     </url>
@@ -200,14 +67,39 @@
     
   <url>
     <loc>http://wzh6.cn/2017/06/22/js-with/</loc>
-    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
+    <lastmod>2017-07-03T03:33:34.629Z</lastmod>
     <data>
         <display>
         <title>Javascript中的with关键字</title>
         <pubTime>2017-06-22T06:23:30.458Z</pubTime>
         
+        <tag>js</tag>
+         
          
            
+             
+              <breadCrumb title="js" url="http://wzh6.cn/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/js_extend/</loc>
+    <lastmod>2017-07-03T03:33:25.900Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript中继承总结(apply,call,prototype)</title>
+        <pubTime>2017-06-22T06:23:30.458Z</pubTime>
+        
+        <tag>js</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://wzh6.cn/categories/js/"/>
+          
         </display>
     </data>
     </url>
@@ -215,7 +107,7 @@
     
   <url>
     <loc>http://wzh6.cn/2017/06/22/github-bind-domain/</loc>
-    <lastmod>2017-06-22T06:23:30.457Z</lastmod>
+    <lastmod>2017-07-03T03:33:16.693Z</lastmod>
     <data>
         <display>
         <title>Github+Hexo绑定自己的域名</title>
@@ -230,10 +122,232 @@
     
   <url>
     <loc>http://wzh6.cn/2017/06/22/classOperate/</loc>
-    <lastmod>2017-06-22T06:23:30.457Z</lastmod>
+    <lastmod>2017-07-03T03:33:06.239Z</lastmod>
     <data>
         <display>
         <title>原生js操作类名的添加、移除、切换</title>
+        <pubTime>2017-06-22T06:23:30.457Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>html</tag>
+         
+         
+           
+             
+              <breadCrumb title="js" url="http://wzh6.cn/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/07/03/vue-banner/</loc>
+    <lastmod>2017-07-03T03:32:26.260Z</lastmod>
+    <data>
+        <display>
+        <title>vue banner轮播</title>
+        <pubTime>2017-07-03T02:57:23.691Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>css</tag>
+         
+        <tag>html</tag>
+         
+        <tag>vue.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="vue.js" url="http://wzh6.cn/categories/vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack1-build/</loc>
+    <lastmod>2017-07-03T03:32:23.573Z</lastmod>
+    <data>
+        <display>
+        <title>webpack1 配置</title>
+        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
+        
+        <tag>webpack1</tag>
+         
+         
+           
+             
+              <breadCrumb title="webpack1" url="http://wzh6.cn/categories/webpack1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-build/</loc>
+    <lastmod>2017-07-03T03:32:19.048Z</lastmod>
+    <data>
+        <display>
+        <title>webpack2 配置</title>
+        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
+        
+        <tag>webpack2</tag>
+         
+         
+           
+             
+              <breadCrumb title="webpack2" url="http://wzh6.cn/categories/webpack2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-router4-lazy-js/</loc>
+    <lastmod>2017-07-03T03:32:11.301Z</lastmod>
+    <data>
+        <display>
+        <title>webpack2 react-router4 懒加载</title>
+        <pubTime>2017-06-22T06:23:30.461Z</pubTime>
+        
+        <tag>react.js</tag>
+         
+        <tag>router4</tag>
+         
+        <tag>webpack2</tag>
+         
+         
+           
+             
+              <breadCrumb title="webpack2" url="http://wzh6.cn/categories/webpack2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/webpack2-router2-lazy-js/</loc>
+    <lastmod>2017-07-03T03:32:06.869Z</lastmod>
+    <data>
+        <display>
+        <title>webpack2 react-router2 懒加载</title>
+        <pubTime>2017-06-22T06:23:30.460Z</pubTime>
+        
+        <tag>react.js</tag>
+         
+        <tag>router2</tag>
+         
+        <tag>webpack2</tag>
+         
+         
+           
+             
+              <breadCrumb title="webpack2" url="http://wzh6.cn/categories/webpack2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/uploadImages/</loc>
+    <lastmod>2017-07-03T03:29:46.953Z</lastmod>
+    <data>
+        <display>
+        <title>多图片上传</title>
+        <pubTime>2017-06-22T07:09:16.129Z</pubTime>
+        
+        <tag>node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node.js" url="http://wzh6.cn/categories/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/node-server/</loc>
+    <lastmod>2017-07-03T03:28:56.901Z</lastmod>
+    <data>
+        <display>
+        <title>Node服务器搭建</title>
+        <pubTime>2017-06-22T06:28:33.708Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>node.js</tag>
+         
+        <tag>express</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node.js" url="http://wzh6.cn/categories/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/23/nodejs-form-send/</loc>
+    <lastmod>2017-07-03T03:28:42.524Z</lastmod>
+    <data>
+        <display>
+        <title>Node.js原生表單提交</title>
+        <pubTime>2017-06-23T07:36:00.953Z</pubTime>
+        
+        <tag>js</tag>
+         
+        <tag>node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node.js" url="http://wzh6.cn/categories/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/23/node-debug/</loc>
+    <lastmod>2017-07-03T03:27:37.780Z</lastmod>
+    <data>
+        <display>
+        <title>Node.js 热部署加debug模式</title>
+        <pubTime>2017-06-23T02:24:34.896Z</pubTime>
+        
+        <tag>node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node.js" url="http://wzh6.cn/categories/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wzh6.cn/2017/06/22/hexo/</loc>
+    <lastmod>2017-06-22T06:23:30.458Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo命令教程</title>
         <pubTime>2017-06-22T06:23:30.457Z</pubTime>
         
          
