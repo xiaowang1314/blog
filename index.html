@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/css/" style="font-size: 12.5px;">css</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react-js/" style="font-size: 12.5px;">react.js</a> <a href="/tags/router2/" style="font-size: 10px;">router2</a> <a href="/tags/router4/" style="font-size: 10px;">router4</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/webpack1/" style="font-size: 10px;">webpack1</a> <a href="/tags/webpack2/" style="font-size: 15px;">webpack2</a>
+						<a href="/tags/css/" style="font-size: 12.5px;">css</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react-js/" style="font-size: 12.5px;">react.js</a> <a href="/tags/router2/" style="font-size: 10px;">router2</a> <a href="/tags/router4/" style="font-size: 10px;">router4</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/webpack1/" style="font-size: 10px;">webpack1</a> <a href="/tags/webpack2/" style="font-size: 15px;">webpack2</a>
 					</div>
 				</section>
 				
@@ -196,6 +196,94 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-gcc-update" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/17/gcc-update/" class="article-date">
+  	<time datetime="2017-07-17T09:37:05.095Z" itemprop="datePublished">2017-07-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/gcc-update/">Linux升级安装GCC</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于我的CentOS 6系统中，gcc版本只有4.4.7，安装nodejs时遇到gcc版本4.8以上，所以需要升级</p>
+<h2 id="下载最新版本gcc"><a href="#下载最新版本gcc" class="headerlink" title="下载最新版本gcc"></a>下载最新版本gcc</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget http://gcc.parentingamerica.com/releases/gcc-5.2.0/gcc-6.3.0.tar.bz2</div><div class="line">// 或</div><div class="line">wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-5.2.0/gcc-6.3.0.tar.bz2</div></pre></td></tr></table></figure>
+<p>由于gcc文件较大，下载太慢了，我用迅雷下载了此文件<a href="http://gcc.skazkaforyou.com/releases/" target="_blank" rel="external">‘官网下载’</a>,然后用SecureCRT 8.0等工具上传到linux</p>
+<h2 id="解压下载文件"><a href="#解压下载文件" class="headerlink" title="解压下载文件"></a>解压下载文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -xf gcc-5.2.0.tar.bz2</div></pre></td></tr></table></figure>
+<p>tar命令详解</p>
+<p>-x：解压</p>
+<p>-r：向压缩归档文件末尾追加文件</p>
+<h2 id="下载gcc依赖文件和库"><a href="#下载gcc依赖文件和库" class="headerlink" title="下载gcc依赖文件和库"></a>下载gcc依赖文件和库</h2><p>解压完成后，进入工作目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd gcc-6.3.0</div></pre></td></tr></table></figure>
+<p>执行download_prerequisites脚本，下载gcc依赖文件和库：(download_prerequisites脚本，会下载安装gcc所需的mpfr、gmp和mpc文件)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./contrib/download_prerequisites</div></pre></td></tr></table></figure>
+<h2 id="配置安装gcc"><a href="#配置安装gcc" class="headerlink" title="配置安装gcc"></a>配置安装gcc</h2><p>建立一个输出目录，编译时所有生成的中间文件都放到该目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir gcc-temp-6.3.0</div></pre></td></tr></table></figure>
+<p>工作目录切换至输出目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd gcc-temp-6.3.0</div></pre></td></tr></table></figure>
+<p>执行configure配置安装文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib</div></pre></td></tr></table></figure>
+<p>配置完成后，执行以下命令，编译gcc：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make</div></pre></td></tr></table></figure>
+<p>注意：编译gcc时间较长，我用了近一个小时左右才编译完成(有些可能更长看电脑配置)。</p>
+<p>编译完成后，安装gcc：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make install</div></pre></td></tr></table></figure>
+<p>查看gcc版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -v</div></pre></td></tr></table></figure>
+<h4 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h4><ol>
+<li>make的时候出现 C++ preprocessor “/lib/cpp” fails sanity check</li>
+</ol>
+<p>解决方法:<br><a href="https://askubuntu.com/questions/509663/c-preprocessor-lib-cpp-fails-sanity-check" target="_blank" rel="external">‘yum install gcc-c++’</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-vue-banner" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -591,73 +679,6 @@
 
 
   
-    <article id="post-webpack2-router2-lazy-js" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/06/22/webpack2-router2-lazy-js/" class="article-date">
-  	<time datetime="2017-06-22T06:23:30.460Z" itemprop="datePublished">2017-06-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/webpack2-router2-lazy-js/">webpack2 react-router2 懒加载</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>版本号：</p>
-<ol>
-<li>react-router：2.8.1</li>
-<li>webpack: 2.5.1</li>
-</ol>
-<h2 id="Route-js-路由配置文件"><a href="#Route-js-路由配置文件" class="headerlink" title="Route.js 路由配置文件"></a>Route.js 路由配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">import React, &#123;</div><div class="line">    Component</div><div class="line">&#125; from &apos;react&apos;;</div><div class="line">import store from &apos;../Config/Store&apos;;</div><div class="line">import &#123;</div><div class="line">    Router,</div><div class="line">    Route,</div><div class="line">    Redirect,</div><div class="line">    IndexRoute,</div><div class="line">    browserHistory,</div><div class="line">    hashHistory</div><div class="line">&#125; from &apos;react-router&apos;;</div><div class="line">import &#123;</div><div class="line">    CSSTransitionGroup</div><div class="line">&#125; from &apos;react-transition-group&apos;;</div><div class="line"></div><div class="line"></div><div class="line">class Roots extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;CSSTransitionGroup transitionName=&quot;example&quot;  transitionEnterTimeout=&#123;500&#125; transitionLeaveTimeout=&#123;300&#125;&gt;</div><div class="line">                &lt;div key=&#123;this.props.location.pathname&#125;&gt;</div><div class="line">                    &#123;this.props.children&#125;</div><div class="line">                &lt;/div&gt;</div><div class="line">            &lt;/CSSTransitionGroup&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//首页</div><div class="line">const Home = (location, cb) =&gt; &#123;</div><div class="line">    require.ensure([], require =&gt; &#123;</div><div class="line">        cb(null, require(&apos;../page/Home&apos;).default)</div><div class="line">    &#125;, &apos;Home&apos;)</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//个人信息</div><div class="line">const DpsProfile = (location, cb) =&gt; &#123;</div><div class="line">    require.ensure([], require =&gt; &#123;</div><div class="line">        cb(null, require(&apos;../page/DpsProfile&apos;).default)</div><div class="line">    &#125;, &apos;DpsProfile&apos;)</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">var history = process.env.NODE_ENV !== &apos;production&apos; ? browserHistory : hashHistory;</div><div class="line">const RouteConfig = (</div><div class="line">    &lt;Router history=&#123;history&#125;&gt;</div><div class="line">        &lt;Route path=&quot;/&quot;   component=&#123;Roots&#125;&gt;</div><div class="line">            &lt;IndexRoute getComponent=&#123;Home&#125;/&gt;</div><div class="line">            &#123;/*个人信息*/&#125;</div><div class="line">            &lt;Route path=&quot;/profile&quot; getComponent=&#123;Profile&#125; /&gt;</div><div class="line">        &lt;/Route&gt;</div><div class="line">    &lt;/Router&gt;</div><div class="line">)</div><div class="line"></div><div class="line">export default RouteConfig;</div></pre></td></tr></table></figure>
-<h2 id="webpack-config-dev-js-配置文件"><a href="#webpack-config-dev-js-配置文件" class="headerlink" title="webpack.config.dev.js 配置文件"></a>webpack.config.dev.js 配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    output: &#123;</div><div class="line">        //要加上这个</div><div class="line">        chunkFilename: &apos;js/[name].[chunkhash:5].min.js&apos;,</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-js/">react.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/router2/">router2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack2/">webpack2</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/webpack2/">webpack2</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-webpack2-build" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -789,11 +810,11 @@
 
 
   
-    <article id="post-mobile-layout" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-webpack2-router2-lazy-js" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/22/mobile-layout/" class="article-date">
-  	<time datetime="2017-06-22T06:23:30.459Z" itemprop="datePublished">2017-06-22</time>
+      <a href="/2017/06/22/webpack2-router2-lazy-js/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.460Z" itemprop="datePublished">2017-06-22</time>
 </a>
     </div>
   
@@ -806,7 +827,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/mobile-layout/">webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖</a>
+      <a class="article-title" href="/2017/06/22/webpack2-router2-lazy-js/">webpack2 react-router2 懒加载</a>
     </h1>
   
 
@@ -815,8 +836,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>下面我要介绍webapp上的布局方法：<br>可以解决想隐藏滚动条、ios滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖或者被撑的老远等问题<br>(安卓机有个问题：input获取焦点时会被软键盘覆盖，暂时未想到好方案)<br>下面这种布局目前来说我感觉是比较好的基础布局方式</p>
-<h2 id="先上示例代码"><a href="#先上示例代码" class="headerlink" title="先上示例代码"></a>先上示例代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</div><div class="line">    &lt;title&gt;关于&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        *&#123;margin: 0;padding: 0;&#125;</div><div class="line">        html&#123;font-size: 10px;&#125;</div><div class="line">       .page,html, body&#123;</div><div class="line">           width: 100%;</div><div class="line">           height: 100%;</div><div class="line">            overflow: hidden;</div><div class="line">        &#125;</div><div class="line">        .page&#123;overflow-y: auto;&#125;</div><div class="line">        .layer&#123;position: fixed;bottom:0;width: 100%;background: rgba(0,0,0,.5);color: <span class="comment">#FFF;&#125;</span></div><div class="line">        .layer input&#123;height: 50px;&#125;</div><div class="line">        .layer .sendBtn&#123;-webkit-appearance:none;width: 100px;background: rgba(0,0,0,.5);color: <span class="comment">#FFF;border-width: 0;font-size:1rem;&#125;</span></div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"page"</span>&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=<span class="string">"layer"</span>&gt;</div><div class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> &gt;</div><div class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"button"</span>  class=<span class="string">"sendBtn"</span> value=<span class="string">"发送"</span>&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script src=<span class="string">"jquery-2.2.4.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">$(<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">	//检查是否实时触发滚动事件</div><div class="line">    $(<span class="string">'.page'</span>).scroll(<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">	  //$(<span class="string">'.layer'</span>).html($(<span class="string">'.page'</span>).scrollTop());</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+        <p>版本号：</p>
+<ol>
+<li>react-router：2.8.1</li>
+<li>webpack: 2.5.1</li>
+</ol>
+<h2 id="Route-js-路由配置文件"><a href="#Route-js-路由配置文件" class="headerlink" title="Route.js 路由配置文件"></a>Route.js 路由配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">import React, &#123;</div><div class="line">    Component</div><div class="line">&#125; from &apos;react&apos;;</div><div class="line">import store from &apos;../Config/Store&apos;;</div><div class="line">import &#123;</div><div class="line">    Router,</div><div class="line">    Route,</div><div class="line">    Redirect,</div><div class="line">    IndexRoute,</div><div class="line">    browserHistory,</div><div class="line">    hashHistory</div><div class="line">&#125; from &apos;react-router&apos;;</div><div class="line">import &#123;</div><div class="line">    CSSTransitionGroup</div><div class="line">&#125; from &apos;react-transition-group&apos;;</div><div class="line"></div><div class="line"></div><div class="line">class Roots extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;CSSTransitionGroup transitionName=&quot;example&quot;  transitionEnterTimeout=&#123;500&#125; transitionLeaveTimeout=&#123;300&#125;&gt;</div><div class="line">                &lt;div key=&#123;this.props.location.pathname&#125;&gt;</div><div class="line">                    &#123;this.props.children&#125;</div><div class="line">                &lt;/div&gt;</div><div class="line">            &lt;/CSSTransitionGroup&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//首页</div><div class="line">const Home = (location, cb) =&gt; &#123;</div><div class="line">    require.ensure([], require =&gt; &#123;</div><div class="line">        cb(null, require(&apos;../page/Home&apos;).default)</div><div class="line">    &#125;, &apos;Home&apos;)</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//个人信息</div><div class="line">const DpsProfile = (location, cb) =&gt; &#123;</div><div class="line">    require.ensure([], require =&gt; &#123;</div><div class="line">        cb(null, require(&apos;../page/DpsProfile&apos;).default)</div><div class="line">    &#125;, &apos;DpsProfile&apos;)</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">var history = process.env.NODE_ENV !== &apos;production&apos; ? browserHistory : hashHistory;</div><div class="line">const RouteConfig = (</div><div class="line">    &lt;Router history=&#123;history&#125;&gt;</div><div class="line">        &lt;Route path=&quot;/&quot;   component=&#123;Roots&#125;&gt;</div><div class="line">            &lt;IndexRoute getComponent=&#123;Home&#125;/&gt;</div><div class="line">            &#123;/*个人信息*/&#125;</div><div class="line">            &lt;Route path=&quot;/profile&quot; getComponent=&#123;Profile&#125; /&gt;</div><div class="line">        &lt;/Route&gt;</div><div class="line">    &lt;/Router&gt;</div><div class="line">)</div><div class="line"></div><div class="line">export default RouteConfig;</div></pre></td></tr></table></figure>
+<h2 id="webpack-config-dev-js-配置文件"><a href="#webpack-config-dev-js-配置文件" class="headerlink" title="webpack.config.dev.js 配置文件"></a>webpack.config.dev.js 配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    output: &#123;</div><div class="line">        //要加上这个</div><div class="line">        chunkFilename: &apos;js/[name].[chunkhash:5].min.js&apos;,</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -824,12 +851,12 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-js/">react.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/router2/">router2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack2/">webpack2</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/css布局/">css布局</a>
+	<a class="article-category-link" href="/categories/webpack2/">webpack2</a>
 	</div>
 
 

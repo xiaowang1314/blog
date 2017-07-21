@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/css/" style="font-size: 12.5px;">css</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react-js/" style="font-size: 12.5px;">react.js</a> <a href="/tags/router2/" style="font-size: 10px;">router2</a> <a href="/tags/router4/" style="font-size: 10px;">router4</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/webpack1/" style="font-size: 10px;">webpack1</a> <a href="/tags/webpack2/" style="font-size: 15px;">webpack2</a>
+						<a href="/tags/css/" style="font-size: 12.5px;">css</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react-js/" style="font-size: 12.5px;">react.js</a> <a href="/tags/router2/" style="font-size: 10px;">router2</a> <a href="/tags/router4/" style="font-size: 10px;">router4</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/webpack1/" style="font-size: 10px;">webpack1</a> <a href="/tags/webpack2/" style="font-size: 15px;">webpack2</a>
 					</div>
 				</section>
 				
@@ -197,6 +197,132 @@
 
       <div class="body-wrap">
   
+    <article id="post-mobile-layout" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/22/mobile-layout/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.459Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/mobile-layout/">webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>下面我要介绍webapp上的布局方法：<br>可以解决想隐藏滚动条、ios滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖或者被撑的老远等问题<br>(安卓机有个问题：input获取焦点时会被软键盘覆盖，暂时未想到好方案)<br>下面这种布局目前来说我感觉是比较好的基础布局方式</p>
+<h2 id="先上示例代码"><a href="#先上示例代码" class="headerlink" title="先上示例代码"></a>先上示例代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</div><div class="line">    &lt;title&gt;关于&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        *&#123;margin: 0;padding: 0;&#125;</div><div class="line">        html&#123;font-size: 10px;&#125;</div><div class="line">       .page,html, body&#123;</div><div class="line">           width: 100%;</div><div class="line">           height: 100%;</div><div class="line">            overflow: hidden;</div><div class="line">        &#125;</div><div class="line">        .page&#123;overflow-y: auto;&#125;</div><div class="line">        .layer&#123;position: fixed;bottom:0;width: 100%;background: rgba(0,0,0,.5);color: <span class="comment">#FFF;&#125;</span></div><div class="line">        .layer input&#123;height: 50px;&#125;</div><div class="line">        .layer .sendBtn&#123;-webkit-appearance:none;width: 100px;background: rgba(0,0,0,.5);color: <span class="comment">#FFF;border-width: 0;font-size:1rem;&#125;</span></div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"page"</span>&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;1&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;2&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;p&gt;3&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=<span class="string">"layer"</span>&gt;</div><div class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> &gt;</div><div class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"button"</span>  class=<span class="string">"sendBtn"</span> value=<span class="string">"发送"</span>&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script src=<span class="string">"jquery-2.2.4.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">$(<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">	//检查是否实时触发滚动事件</div><div class="line">    $(<span class="string">'.page'</span>).scroll(<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">	  //$(<span class="string">'.layer'</span>).html($(<span class="string">'.page'</span>).scrollTop());</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/css布局/">css布局</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-loadImg" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/22/loadImg/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.459Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/loadImg/">按顺序加载图片</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景:"></a>使用场景:</h3><p>在那些需要在所有图片加载完后再执行后续函数时使用<br>比如我之前遇到的场景：</p>
+<ul>
+<li>上传多张图片，等所有图片上传完后再把获取到的图片地址ajax提交表单到后台</li>
+<li>canvas使用时按顺序绘制图片，不然会出现层级关系问题</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/***</div><div class="line"> *</div><div class="line"> * 按顺序加载图片</div><div class="line"> *</div><div class="line"> */</div><div class="line"> var arr=[<span class="string">'img/1.png'</span>,<span class="string">'img/2.png'</span>,<span class="string">'img/3.png'</span>,<span class="string">'img/4.png'</span>];</div><div class="line"> var <span class="built_in">test</span>=arr.slice();//数组copy防止直接操作原数组</div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">loadImg</span></span>() &#123;//递归方法</div><div class="line">     <span class="keyword">if</span>(test.length==0)&#123;</div><div class="line">         console.log(<span class="string">'end'</span>);</div><div class="line">         <span class="built_in">return</span>;</div><div class="line">     &#125;</div><div class="line">     var img=new Image();</div><div class="line">     img.onload=<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">         console.log(this.src);</div><div class="line">         loadImg();</div><div class="line">     &#125;</div><div class="line">     img.src=test.shift();</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> loadImg();</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-promiseAjax" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -257,11 +383,11 @@
 
 
   
-    <article id="post-loadImg" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js_extend" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/22/loadImg/" class="article-date">
-  	<time datetime="2017-06-22T06:23:30.459Z" itemprop="datePublished">2017-06-22</time>
+      <a href="/2017/06/22/js_extend/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.458Z" itemprop="datePublished">2017-06-22</time>
 </a>
     </div>
   
@@ -274,7 +400,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/loadImg/">按顺序加载图片</a>
+      <a class="article-title" href="/2017/06/22/js_extend/">Javascript中继承总结(apply,call,prototype)</a>
     </h1>
   
 
@@ -283,12 +409,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景:"></a>使用场景:</h3><p>在那些需要在所有图片加载完后再执行后续函数时使用<br>比如我之前遇到的场景：</p>
-<ul>
-<li>上传多张图片，等所有图片上传完后再把获取到的图片地址ajax提交表单到后台</li>
-<li>canvas使用时按顺序绘制图片，不然会出现层级关系问题</li>
+        <h2 id="js中有三种继承方式"><a href="#js中有三种继承方式" class="headerlink" title="js中有三种继承方式"></a>js中有三种继承方式</h2><ul>
+<li>js原型(prototype)实现继承</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/***</div><div class="line"> *</div><div class="line"> * 按顺序加载图片</div><div class="line"> *</div><div class="line"> */</div><div class="line"> var arr=[<span class="string">'img/1.png'</span>,<span class="string">'img/2.png'</span>,<span class="string">'img/3.png'</span>,<span class="string">'img/4.png'</span>];</div><div class="line"> var <span class="built_in">test</span>=arr.slice();//数组copy防止直接操作原数组</div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">loadImg</span></span>() &#123;//递归方法</div><div class="line">     <span class="keyword">if</span>(test.length==0)&#123;</div><div class="line">         console.log(<span class="string">'end'</span>);</div><div class="line">         <span class="built_in">return</span>;</div><div class="line">     &#125;</div><div class="line">     var img=new Image();</div><div class="line">     img.onload=<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">         console.log(this.src);</div><div class="line">         loadImg();</div><div class="line">     &#125;</div><div class="line">     img.src=test.shift();</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> loadImg();</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Person(name,age)&#123;  </div><div class="line">       this.name=name;  </div><div class="line">       this.age=age;  </div><div class="line">   &#125;  </div><div class="line">   Person.prototype.sayHello=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(<span class="string">"使用原型得到Name："</span>+this.name);  </div><div class="line">   &#125;  </div><div class="line">   var per=new Person(<span class="string">"小土豆"</span>,25);  </div><div class="line">   per.sayHello(); //输出：使用原型得到Name:小土豆</div><div class="line"></div><div class="line">     </div><div class="line">   <span class="keyword">function</span> <span class="function"><span class="title">Student</span></span>()&#123;&#125;  </div><div class="line">   Student.prototype=new Person(<span class="string">"洪如彤"</span>,21);  </div><div class="line">   var stu=new Student();  </div><div class="line">   Student.prototype.grade=5;  </div><div class="line">   Student.prototype.intr=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(this.grade);  </div><div class="line">   &#125;  </div><div class="line">   stu.sayHello();//输出：使用原型得到Name:洪如彤  </div><div class="line">   stu.intr();//输出：5</div></pre></td></tr></table></figure>
+<ul>
+<li>构造函数实现继承</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Parent(name)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.sayParent=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Parent:"</span>+this.name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="keyword">function</span>  Child(name,age)&#123;  </div><div class="line">        this.tempMethod=Parent;  </div><div class="line">        this.tempMethod(name);  </div><div class="line">        this.age=age;  </div><div class="line">        this.sayChild=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Child:"</span>+this.name+<span class="string">"age:"</span>+this.age);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    var parent=new Parent(<span class="string">"江剑臣"</span>);  </div><div class="line">    parent.sayParent(); //输出：“Parent:江剑臣”  </div><div class="line">    var child=new Child(<span class="string">"李鸣"</span>,24); </div><div class="line">    child.sayChild();  //输出：“Child:李鸣 age:24”</div></pre></td></tr></table></figure>
+<ul>
+<li>call , apply实现继承</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Person(name,age,love)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.age=age;  </div><div class="line">        this.love=love;  </div><div class="line">        this.say=<span class="keyword">function</span> <span class="function"><span class="title">say</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"姓名："</span>+name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call方式  </div><div class="line">    <span class="keyword">function</span> student(name,age)&#123;  </div><div class="line">        Person.call(this,name,age);  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //apply方式  </div><div class="line">    <span class="keyword">function</span> teacher(name,love)&#123;  </div><div class="line">        Person.apply(this,[name,love]);  </div><div class="line">        //Person.apply(this,arguments); //跟上句一样的效果，arguments  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call与aplly的异同：  </div><div class="line">    //1,第一个参数this都一样,指当前对象  </div><div class="line">    //2,第二个参数不一样：call的是一个个的参数列表；apply的是一个数组（arguments也可以）  </div><div class="line"></div><div class="line">    var per=new Person(<span class="string">"武凤楼"</span>,25,<span class="string">"魏荧屏"</span>); //输出：“武凤楼”  </div><div class="line">    per.say();  </div><div class="line">    var stu=new student(<span class="string">"曹玉"</span>,18);//输出：“曹玉”  </div><div class="line">    stu.say();  </div><div class="line">    var tea=new teacher(<span class="string">"秦杰"</span>,16);//输出：“秦杰”  </div><div class="line">    tea.say();</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -399,139 +532,6 @@
 	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js_extend" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/06/22/js_extend/" class="article-date">
-  	<time datetime="2017-06-22T06:23:30.458Z" itemprop="datePublished">2017-06-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/js_extend/">Javascript中继承总结(apply,call,prototype)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="js中有三种继承方式"><a href="#js中有三种继承方式" class="headerlink" title="js中有三种继承方式"></a>js中有三种继承方式</h2><ul>
-<li>js原型(prototype)实现继承</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Person(name,age)&#123;  </div><div class="line">       this.name=name;  </div><div class="line">       this.age=age;  </div><div class="line">   &#125;  </div><div class="line">   Person.prototype.sayHello=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(<span class="string">"使用原型得到Name："</span>+this.name);  </div><div class="line">   &#125;  </div><div class="line">   var per=new Person(<span class="string">"小土豆"</span>,25);  </div><div class="line">   per.sayHello(); //输出：使用原型得到Name:小土豆</div><div class="line"></div><div class="line">     </div><div class="line">   <span class="keyword">function</span> <span class="function"><span class="title">Student</span></span>()&#123;&#125;  </div><div class="line">   Student.prototype=new Person(<span class="string">"洪如彤"</span>,21);  </div><div class="line">   var stu=new Student();  </div><div class="line">   Student.prototype.grade=5;  </div><div class="line">   Student.prototype.intr=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">       alert(this.grade);  </div><div class="line">   &#125;  </div><div class="line">   stu.sayHello();//输出：使用原型得到Name:洪如彤  </div><div class="line">   stu.intr();//输出：5</div></pre></td></tr></table></figure>
-<ul>
-<li>构造函数实现继承</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Parent(name)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.sayParent=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Parent:"</span>+this.name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="keyword">function</span>  Child(name,age)&#123;  </div><div class="line">        this.tempMethod=Parent;  </div><div class="line">        this.tempMethod(name);  </div><div class="line">        this.age=age;  </div><div class="line">        this.sayChild=<span class="function"><span class="title">function</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"Child:"</span>+this.name+<span class="string">"age:"</span>+this.age);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    var parent=new Parent(<span class="string">"江剑臣"</span>);  </div><div class="line">    parent.sayParent(); //输出：“Parent:江剑臣”  </div><div class="line">    var child=new Child(<span class="string">"李鸣"</span>,24); </div><div class="line">    child.sayChild();  //输出：“Child:李鸣 age:24”</div></pre></td></tr></table></figure>
-<ul>
-<li>call , apply实现继承</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  Person(name,age,love)&#123;  </div><div class="line">        this.name=name;  </div><div class="line">        this.age=age;  </div><div class="line">        this.love=love;  </div><div class="line">        this.say=<span class="keyword">function</span> <span class="function"><span class="title">say</span></span>()&#123;  </div><div class="line">            alert(<span class="string">"姓名："</span>+name);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call方式  </div><div class="line">    <span class="keyword">function</span> student(name,age)&#123;  </div><div class="line">        Person.call(this,name,age);  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //apply方式  </div><div class="line">    <span class="keyword">function</span> teacher(name,love)&#123;  </div><div class="line">        Person.apply(this,[name,love]);  </div><div class="line">        //Person.apply(this,arguments); //跟上句一样的效果，arguments  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    //call与aplly的异同：  </div><div class="line">    //1,第一个参数this都一样,指当前对象  </div><div class="line">    //2,第二个参数不一样：call的是一个个的参数列表；apply的是一个数组（arguments也可以）  </div><div class="line"></div><div class="line">    var per=new Person(<span class="string">"武凤楼"</span>,25,<span class="string">"魏荧屏"</span>); //输出：“武凤楼”  </div><div class="line">    per.say();  </div><div class="line">    var stu=new student(<span class="string">"曹玉"</span>,18);//输出：“曹玉”  </div><div class="line">    stu.say();  </div><div class="line">    var tea=new teacher(<span class="string">"秦杰"</span>,16);//输出：“秦杰”  </div><div class="line">    tea.say();</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/06/22/hexo/" class="article-date">
-  	<time datetime="2017-06-22T06:23:30.457Z" itemprop="datePublished">2017-06-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/hexo/">Hexo命令教程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
 
       
       <div class="clearfix"></div>
@@ -665,6 +665,67 @@
 	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/22/hexo/" class="article-date">
+  	<time datetime="2017-06-22T06:23:30.457Z" itemprop="datePublished">2017-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/hexo/">Hexo命令教程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
 
       
       <div class="clearfix"></div>

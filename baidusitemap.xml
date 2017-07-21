@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://wzh6.cn/2017/07/17/gcc-update/</loc>
+    <lastmod>2017-07-21T02:52:31.112Z</lastmod>
+    <data>
+        <display>
+        <title>Linux升级安装GCC</title>
+        <pubTime>2017-07-17T09:37:05.095Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://wzh6.cn/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wzh6.cn/2017/06/22/promiseAjax/</loc>
     <lastmod>2017-07-03T03:34:44.067Z</lastmod>
     <data>
@@ -31,9 +51,9 @@
         <title>webapp隐藏滚动条、滚动事件(scroll)没有实时触发、ios(position:fixed)被键盘覆盖</title>
         <pubTime>2017-06-22T06:23:30.459Z</pubTime>
         
-        <tag>css</tag>
-         
         <tag>html</tag>
+         
+        <tag>css</tag>
          
          
            
@@ -152,9 +172,9 @@
         
         <tag>js</tag>
          
-        <tag>css</tag>
-         
         <tag>html</tag>
+         
+        <tag>css</tag>
          
         <tag>vue.js</tag>
          
@@ -216,11 +236,11 @@
         <title>webpack2 react-router4 懒加载</title>
         <pubTime>2017-06-22T06:23:30.461Z</pubTime>
         
+        <tag>webpack2</tag>
+         
         <tag>react.js</tag>
          
         <tag>router4</tag>
-         
-        <tag>webpack2</tag>
          
          
            
@@ -240,11 +260,11 @@
         <title>webpack2 react-router2 懒加载</title>
         <pubTime>2017-06-22T06:23:30.460Z</pubTime>
         
+        <tag>webpack2</tag>
+         
         <tag>react.js</tag>
          
         <tag>router2</tag>
-         
-        <tag>webpack2</tag>
          
          
            
